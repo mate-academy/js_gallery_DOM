@@ -6,13 +6,13 @@ const largeImgId = document.getElementById('largeImg');
 const listU = (event) => {
   event.preventDefault();
 
-  const item = event.target.closest('.list-item');
+  const item = event.target.closest('a');
 
   if (!item || !listUl.contains(item)) {
     return;
   }
 
-  largeImgId.setAttribute('src', item.querySelector('a').getAttribute('href'));
+  largeImgId.src = item;
 };
 
 listUl.addEventListener('click', listU);
