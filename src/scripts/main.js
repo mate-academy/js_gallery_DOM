@@ -3,9 +3,10 @@
 const gallery = document.getElementById('thumbs');
 const largeImage = document.getElementById('largeImg');
 
-for (const picture of gallery.querySelectorAll('.list-item__link')) {
-  picture.addEventListener('click', (event) => {
-    event.preventDefault();
-    largeImage.src = picture.href;
-  });
-}
+gallery.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  const picture = event.target.closest('.list-item__link');
+
+  largeImage.src = picture.href;
+});
