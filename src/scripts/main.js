@@ -1,6 +1,7 @@
 'use strict';
 
 const thumbnails = document.getElementById('thumbs');
+
 const mainPicture = document.getElementById('largeImg');
 
 thumbnails.addEventListener('click', (event) => {
