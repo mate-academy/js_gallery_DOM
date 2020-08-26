@@ -1,12 +1,8 @@
 'use strict';
 
-window.onload = () => {
-  const largeImg = document.getElementById('largeImg');
+const largeImg = document.getElementById('largeImg');
 
-  largeImg.height = parseInt(window.getComputedStyle(largeImg).height);
-
-  document.querySelector('.gallery__list').onclick = (event) => {
-    event.preventDefault();
-    largeImg.src = event.target.src;
-  };
+document.querySelector('.gallery').onclick = (event) => {
+  event.preventDefault();
+  largeImg.src = event.target.closest('.list-item__link').href;
 };
