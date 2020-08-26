@@ -7,7 +7,7 @@ const mainPicture = document.getElementById('largeImg');
 thumbnails.addEventListener('click', (event) => {
   event.preventDefault();
 
-  const pictureDir = event.target.closest('.list-item__link');
+  const pictureElement = event.target.closest('.list-item__link');
 
-  mainPicture.src = pictureDir.href;
+  mainPicture.src = pictureElement.href;
 });
