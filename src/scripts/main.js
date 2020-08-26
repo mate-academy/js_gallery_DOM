@@ -8,9 +8,5 @@ list.addEventListener('click', (event) => {
 
   const item = event.target.closest('.list-item__link');
 
-  if (!item || !list.contains(item)) {
-    return;
-  };
-
   largImg.src = item.href;
 });
