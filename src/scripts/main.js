@@ -5,8 +5,12 @@ const mainImg = document.querySelector('#largeImg');
 
 galleryList.addEventListener('click', (event) => {
   event.preventDefault();
-});
 
-galleryList.addEventListener('click', (event) => {
-  mainImg.src = event.target.src;
+  const item = event.target.closest('.list-item__link');
+
+  if (!item || !galleryList.contains(item)) {
+    return;
+  }
+
+  mainImg.src = item.href;
 });
