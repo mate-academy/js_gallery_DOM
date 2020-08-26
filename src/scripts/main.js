@@ -1,6 +1,6 @@
 'use strict';
 
-const image = document.getElementById('largeImg');
+const image = document.querySelector('largeImg');
 
 document.querySelector('.gallery').onclick = (event) => {
   event.preventDefault();
