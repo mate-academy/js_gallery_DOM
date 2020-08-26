@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const image = document.getElementById('largeImg');
 
