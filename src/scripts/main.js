@@ -1,8 +1,6 @@
 'use strict';
 
-window.addEventListener('load', slider());
-
-function slider() {
+window.addEventListener('load', () => {
   const list = document.getElementById('thumbs');
   const largeImg = document.getElementById('largeImg');
 
@@ -13,4 +11,4 @@ function slider() {
 
     largeImg.src = elem.href;
   });
-}
+});
