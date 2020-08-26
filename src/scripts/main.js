@@ -2,7 +2,6 @@
 
 const links = document.querySelectorAll('.list-item__link');
 const mainImage = document.getElementById('largeImg');
-
 const pathNames = [...links].map(elem => elem.pathname);
 
 [...links].forEach((link, i) => {
