@@ -1,13 +1,17 @@
 'use strict';
 
-const image = document.querySelectorAll('.list-item');
+const image = document.getElementById('thumbs');
 
-for (const img of [...image]) {
-  img.addEventListener('click', (event) => {
-    event.preventDefault();
+image.addEventListener('click', (event) => {
+  event.preventDefault();
 
-    const photoUrl = img.querySelector('.list-item__link');
+  const clickedElem = event.target;
 
-    document.getElementById('largeImg').src = `${photoUrl.href}`;
-  });
-}
+  if (clickedElem.parentElement.href === undefined) {
+    return;
+  }
+
+  document
+    .getElementById('largeImg')
+    .src = `${clickedElem.parentElement.href}`;
+});
