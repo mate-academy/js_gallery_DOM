@@ -1,8 +1,8 @@
 'use strict';
 
-const image = document.querySelectorAll('.list-item');
+const imageList = document.querySelectorAll('.list-item');
 
-for (const img of [...image]) {
+for (const img of [...imageList]) {
   img.addEventListener('click', (event) => {
     event.preventDefault();
 
