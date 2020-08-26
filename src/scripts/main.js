@@ -9,4 +9,4 @@ ul.addEventListener('click', (event) => {
   const link = event.target.closest('a');
 
   largeImg.src = link.href;
-})
+});
