@@ -1,17 +1,16 @@
 'use strict';
 
 const image = document.getElementById('thumbs');
+const bigImage = document.getElementById('largeImg');
 
 image.addEventListener('click', (event) => {
   event.preventDefault();
 
   const clickedElem = event.target;
 
-  if (clickedElem.parentElement.href === undefined) {
+  if (!clickedElem.parentElement.href) {
     return;
   }
 
-  document
-    .getElementById('largeImg')
-    .src = `${clickedElem.parentElement.href}`;
+  bigImage.src = clickedElem.parentElement.href;
 });
