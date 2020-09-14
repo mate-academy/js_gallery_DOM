@@ -5,8 +5,6 @@ const bigImg = document.querySelector('img');
 
 imgList.addEventListener('click', (event) => {
   event.preventDefault();
-});
 
-imgList.addEventListener('click', (event) => {
-  bigImg.src = event.target.src;
+  bigImg.src = event.target.parentElement.href;
 });
