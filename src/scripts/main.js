@@ -6,11 +6,8 @@ const mainImg = document.querySelector('.gallery__large-img');
 galleryList.addEventListener('click', (event) => {
   const item = event.target;
 
-  if (
-    item.classList.contains('gallery__thumb')
-    || item.classList.contains('list-item__link')
-  ) {
+  if (item.closest('.list-item__link')) {
     event.preventDefault();
-    mainImg.src = item.closest('.list-item__link').getAttribute('href');
+    mainImg.src = item.closest('.list-item__link').href;
   }
 });
