@@ -6,10 +6,10 @@ const largeImage = document.querySelector('#largeImg');
 list.addEventListener('click', (event) => {
   event.preventDefault();
 
-  const item = event.target.closest('.list-item');
+  const imagePreview = event.target.closest('.list-item');
 
-  if (!item || !list.contains(item)) {
+  if (!imagePreview || !list.contains(imagePreview)) {
     return;
   };
-  largeImage.src = item.children[0].href;
+  largeImage.src = imagePreview.children[0].href;
 });
