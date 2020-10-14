@@ -15,9 +15,12 @@ listOfImages.addEventListener('click', (event) => {
 
   largeImg.src = closestParent.href;
 
+  const defaultBoxShadow = '0 0 0 0 rgba(0, 0, 255, .4)';
+  const boxShadowOnFocus = '0 0 5px 1px rgba(0, 0, 255, .4)';
+
   galleryImages.forEach(img => {
-    img.style.boxShadow = '0 0 0 0 rgba(0, 0, 255, .4)';
+    img.style.boxShadow = defaultBoxShadow;
   });
 
-  closestParent.firstElementChild.style.boxShadow = '0 0 5px 1px rgba(0, 0, 255, .4)';
+  closestParent.firstElementChild.style.boxShadow = boxShadowOnFocus;
 });
