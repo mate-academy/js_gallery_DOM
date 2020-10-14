@@ -16,8 +16,8 @@ listOfImages.addEventListener('click', (event) => {
   largeImg.src = closestParent.href;
 
   galleryImages.forEach(img => {
-    img.style.outlineWidth = '0';
+    img.style.boxShadow = '0 0 0 0 rgba(0, 0, 255, .4)';
   });
 
-  closestParent.firstElementChild.style.outline = '1px solid blue';
+  closestParent.firstElementChild.style.boxShadow = '0 0 5px 1px rgba(0, 0, 255, .4)';
 });
