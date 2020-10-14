@@ -1,7 +1,7 @@
 'use strict';
 
 const listOfImages = document.querySelector('.gallery__list');
-const largeImg = document.querySelector('#largeImg');
+const largeImg = document.querySelector('.gallery__large-img');
 const galleryImages = document.querySelectorAll('.gallery__thumb');
 
 listOfImages.addEventListener('click', (event) => {
