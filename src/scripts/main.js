@@ -8,7 +8,7 @@ galleryList.addEventListener('click', (event) => {
 
   const targetImage = event.target.closest('.list-item__link');
 
-  if (!targetImage.classList.contains('list-item__link')) {
+  if (!targetImage || !galleryList.contains(targetImage)) {
     return;
   }
 
