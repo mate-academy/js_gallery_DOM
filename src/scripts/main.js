@@ -1,9 +1,9 @@
 'use strict';
 
-const images = document.querySelector('.gallery__list');
+const imagesList = document.querySelector('.gallery__list');
 const largeImage = document.querySelector('.gallery__large-img');
 
-images.addEventListener('click', (event) => {
+imagesList.addEventListener('click', (event) => {
   const imageLink = event.target.closest('.list-item__link');
 
   event.preventDefault();
