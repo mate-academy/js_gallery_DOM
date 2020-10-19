@@ -7,7 +7,7 @@ const galleryMainImage = document.querySelector('#largeImg');
 galleryImageList.addEventListener('click', (event) => {
   event.preventDefault();
 
-  const evenElement = event.target.closest('.list-item__link');
+  const eventElement = event.target.closest('.list-item__link');
 
-  galleryMainImage.src = evenElement.href;
+  galleryMainImage.src = eventElement.href;
 });
