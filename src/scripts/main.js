@@ -1,15 +1,15 @@
 'use strict';
 
-const mainImg = document.getElementById('largeImg');
-const togglerImg = document.getElementById('thumbs');
+const mainImage = document.getElementById('largeImg');
+const togglerImage = document.getElementById('thumbs');
 
-togglerImg.addEventListener('click', (event) => {
+togglerImage.addEventListener('click', (event) => {
   const item = event.target.closest('.list-item__link');
 
   event.preventDefault();
 
-  if (!item || !togglerImg.contains(item)) {
+  if (!item || !togglerImage.contains(item)) {
     return;
   };
-  mainImg.src = item.href;
+  mainImage.src = item.href;
 });
