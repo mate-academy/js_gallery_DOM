@@ -1,7 +1,7 @@
 'use strict';
 
 const list = document.querySelector('.gallery__list');
-const mainImage = document.querySelector('.gallery > div > img');
+const mainImage = document.querySelector('.gallery__large-img');
 
 list.addEventListener('click', (event) => {
   event.preventDefault();
