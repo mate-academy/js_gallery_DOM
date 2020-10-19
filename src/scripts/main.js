@@ -5,5 +5,5 @@ const mainImage = document.querySelector('.gallery > div > img');
 
 list.addEventListener('click', (event) => {
   event.preventDefault();
-  mainImage.src = event.target.src;
+  mainImage.src = event.target.closest('.list-item__link').href;
 });
