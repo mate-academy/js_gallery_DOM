@@ -1,12 +1,12 @@
 'use strict';
 
 const mainImage = document.querySelector('.gallery__large-img');
-const list = document.querySelector('ul');
+const list = document.querySelector('.gallery__list');
 
 list.addEventListener('click', (event) => {
   event.preventDefault();
 
-  const smallImage = event.target.closest('.list-item');
+  const smallImage = event.target.closest('.list-item__link');
 
-  mainImage.src = smallImage.children[0].href;
+  mainImage.src = smallImage.href;
 });
