@@ -1,12 +1,10 @@
 'use strict';
 
-const listItem = document.querySelectorAll('.list-item');
+const listItem = document.querySelector('#thumbs');
 const mainPicture = document.querySelector('#largeImg');
 
-listItem.forEach(item => {
-  item.addEventListener('click', (event) => {
-    event.preventDefault();
+listItem.addEventListener('click', (event) => {
+  event.preventDefault();
 
-    mainPicture.src = item.children[0].href;
-  });
+  mainPicture.src = event.target.closest('a').href;
 });
