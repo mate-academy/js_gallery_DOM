@@ -1,49 +1,35 @@
 'use strict';
 
-describe(('Gallery application'), () => {
-  const url = 'http://localhost:8080';
-  const imageSec = '/images/landscape-second.png';
-  const imageThird = '/images/landscape-third.png';
-  const imageFourth = '/images/landscape-fourth.png';
-  const imageFifth = '/images/landscape-fifth.png';
-  const imageFirst = '/images/landscape-first.png';
-
+describe('Gallery application', () => {
   beforeEach(() => {
     cy.visit('/');
-    cy.get('[id="largeImg"]').as('largeImg');
+    cy.get('#largeImg').as('largeImg');
+
+    const url = 'http://localhost:8080';
+    const images = ['/images/landscape-first.png',
+      '/images/landscape-second.png', '/images/landscape-third.png',
+      '/images/landscape-fourth.png', '/images/landscape-fifth.png'];
+
+    Cypress.Commands.add('beenSelected', (selector) => {
+      for (let i = 0; i < images.length; i++) {
+        cy.get(`${selector}(${i + 1})`).click();
+        cy.get('@largeImg').should('have.attr', 'src', `${url}${images[i]}`);
+      };
+    });
+
+    Cypress.Commands.add('abeenSelected', (selector) => {
+      for (let i = 0; i < images.length; i++) {
+        cy.get(`[${selector} ${i + 1}"]`).click();
+        cy.get('@largeImg').should('have.attr', 'src', `${url}${images[i]}`);
+      };
+    });
   });
 
   it('can click on a small `img` image', () => {
-    cy.get('ul li:nth-child(2)').click();
-    cy.get('@largeImg').should('have.attr', 'src', url + imageSec);
-
-    cy.get('ul li:nth-child(3)').click();
-    cy.get('@largeImg').should('have.attr', 'src', url + imageThird);
-
-    cy.get('ul li:nth-child(4)').click();
-    cy.get('@largeImg').should('have.attr', 'src', url + imageFourth);
-
-    cy.get('ul li:nth-child(5)').click();
-    cy.get('@largeImg').should('have.attr', 'src', url + imageFifth);
-
-    cy.get('ul li:nth-child(1)').click();
-    cy.get('@largeImg').should('have.attr', 'src', url + imageFirst);
+    cy.beenSelected('ul li:nth-child');
   });
 
   it('can click on `a` outside of image', () => {
-    cy.get('[title="Image 2"]').click();
-    cy.get('@largeImg').should('have.attr', 'src', url + imageSec);
-
-    cy.get('[title="Image 3"]').click();
-    cy.get('@largeImg').should('have.attr', 'src', url + imageThird);
-
-    cy.get('[title="Image 4"]').click();
-    cy.get('@largeImg').should('have.attr', 'src', url + imageFourth);
-
-    cy.get('[title="Image 5"]').click();
-    cy.get('@largeImg').should('have.attr', 'src', url + imageFifth);
-
-    cy.get('[title="Image 1"]').click();
-    cy.get('@largeImg').should('have.attr', 'src', url + imageFirst);
+    cy.abeenSelected('title="Image');
   });
 });
