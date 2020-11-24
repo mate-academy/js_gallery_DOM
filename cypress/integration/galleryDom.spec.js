@@ -26,7 +26,7 @@ describe('Gallery application', () => {
   });
 
   it('can click on a small `img` image', () => {
-    cy.beenSelected('ul li:nth-child');
+    cy.beenSelected('li:nth-child');
   });
 
   it('can click on `a` outside of image', () => {
