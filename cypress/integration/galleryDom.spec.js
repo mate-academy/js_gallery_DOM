@@ -1,6 +1,7 @@
 'use strict';
 
-const url = 'http://localhost:8080';
+const url = Cypress.config().baseUrl;
+
 const images = ['/images/landscape-first.png',
   '/images/landscape-second.png', '/images/landscape-third.png',
   '/images/landscape-fourth.png', '/images/landscape-fifth.png'];
