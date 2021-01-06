@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 1,
-    "start": "2021-01-06T20:46:32.822Z",
-    "end": "2021-01-06T20:46:33.558Z",
-    "duration": 653,
+    "start": "2021-01-06T20:47:54.585Z",
+    "end": "2021-01-06T20:47:55.280Z",
+    "duration": 625,
     "testsRegistered": 2,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "4b8103c8-58b8-4baf-aee5-a3a13f196c8b",
+      "uuid": "7ba62a00-332e-452f-9562-d220bc8949e7",
       "title": "",
       "fullFile": "cypress\\integration\\galleryDom.spec.js",
       "file": "cypress\\integration\\galleryDom.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "7cdf8eb1-a3d6-4ae7-b8ba-20151b41eafc",
+          "uuid": "3501ffbc-7e1c-45ca-8bb9-c42a92a27cab",
           "title": "Gallery application",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "can click on a small `img` image",
               "fullTitle": "Gallery application can click on a small `img` image",
               "timedOut": null,
-              "duration": 653,
+              "duration": 625,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -51,8 +51,8 @@
                 "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://localhost:8080/\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Gallery application`\n    at http://localhost:8080/__cypress/runner/cypress_runner.js:157791:25\n    at visitFailedByErr (http://localhost:8080/__cypress/runner/cypress_runner.js:157162:12)\n    at http://localhost:8080/__cypress/runner/cypress_runner.js:157771:13\n    at tryCatcher (http://localhost:8080/__cypress/runner/cypress_runner.js:10325:23)\n    at Promise._settlePromiseFromHandler (http://localhost:8080/__cypress/runner/cypress_runner.js:8260:31)\n    at Promise._settlePromise (http://localhost:8080/__cypress/runner/cypress_runner.js:8317:18)\n    at Promise._settlePromise0 (http://localhost:8080/__cypress/runner/cypress_runner.js:8362:10)\n    at Promise._settlePromises (http://localhost:8080/__cypress/runner/cypress_runner.js:8438:18)\n    at _drainQueueStep (http://localhost:8080/__cypress/runner/cypress_runner.js:5032:12)\n    at _drainQueue (http://localhost:8080/__cypress/runner/cypress_runner.js:5025:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:8080/__cypress/runner/cypress_runner.js:5041:5)\n    at Async.drainQueues (http://localhost:8080/__cypress/runner/cypress_runner.js:4911:14)\nFrom Your Spec Code:\n    at Context.eval (http://localhost:8080/__cypress/tests?p=cypress\\integration\\galleryDom.spec.js:103:8)",
                 "diff": null
               },
-              "uuid": "a0db57bb-daef-47e1-96af-f103d5f6ad9b",
-              "parentUUID": "7cdf8eb1-a3d6-4ae7-b8ba-20151b41eafc",
+              "uuid": "d0687622-ead0-44f4-94d6-7bc55c582d51",
+              "parentUUID": "3501ffbc-7e1c-45ca-8bb9-c42a92a27cab",
               "isHook": false,
               "skipped": false
             },
@@ -69,8 +69,8 @@
               "context": null,
               "code": "for (var i = 0; i < images.length; i++) {\n  cy.get(\"[title=\\\"Image \".concat(i + 1, \"\\\"]\")).click();\n  cy.get('@largeImg').should('have.attr', 'src', \"\".concat(url).concat(images[i]));\n}\n;",
               "err": {},
-              "uuid": "09ab452c-41a4-44d7-bce7-c707d3824250",
-              "parentUUID": "7cdf8eb1-a3d6-4ae7-b8ba-20151b41eafc",
+              "uuid": "a0e0092b-e6fe-4a6a-bf5c-d8548e88fd19",
+              "parentUUID": "3501ffbc-7e1c-45ca-8bb9-c42a92a27cab",
               "isHook": false,
               "skipped": true
             }
@@ -78,13 +78,13 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "a0db57bb-daef-47e1-96af-f103d5f6ad9b"
+            "d0687622-ead0-44f4-94d6-7bc55c582d51"
           ],
           "pending": [],
           "skipped": [
-            "09ab452c-41a4-44d7-bce7-c707d3824250"
+            "a0e0092b-e6fe-4a6a-bf5c-d8548e88fd19"
           ],
-          "duration": 653,
+          "duration": 625,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
