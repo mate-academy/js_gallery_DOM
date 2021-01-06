@@ -3,12 +3,13 @@
 const mainImage = document.querySelector('.gallery__large-img');
 const thumbs = document.querySelector('#thumbs');
 
-thumbs.addEventListener('click', (mouseEvent) => {
-  const item = mouseEvent.target.closest('.gallery__thumb');
+thumbs.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  const item = e.target.closest('.gallery__thumb');
 
   if (!item || !thumbs.contains(item)) {
     return;
   }
-  mouseEvent.preventDefault();
-  mainImage.src = mouseEvent.target.closest('.list-item__link').href;
+  mainImage.src = e.target.closest('.list-item__link').href;
 });
