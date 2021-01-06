@@ -1,12 +1,9 @@
 'use strict';
 
-const largeImg = document.querySelector('#largeImg');
-const smallImgToChange = document.querySelectorAll('.list-item__link');
+const imageToChange = document.querySelector('#largeImg');
+const ul = document.querySelector('.gallery__list');
 
-for (const i of smallImgToChange) {
-  i.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    largeImg.src = i.href;
-  });
-}
+ul.addEventListener('click', (e) => {
+  e.preventDefault();
+  imageToChange.src = e.target.parentNode.href;
+});
