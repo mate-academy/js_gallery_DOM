@@ -2,23 +2,23 @@
   "stats": {
     "suites": 1,
     "tests": 2,
-    "passes": 2,
+    "passes": 0,
     "pending": 0,
-    "failures": 0,
-    "start": "2021-01-06T20:45:08.767Z",
-    "end": "2021-01-06T20:45:10.250Z",
-    "duration": 1450,
+    "failures": 1,
+    "start": "2021-01-06T20:46:32.822Z",
+    "end": "2021-01-06T20:46:33.558Z",
+    "duration": 653,
     "testsRegistered": 2,
-    "passPercent": 100,
+    "passPercent": 0,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
-    "skipped": 0,
-    "hasSkipped": false
+    "skipped": 1,
+    "hasSkipped": true
   },
   "results": [
     {
-      "uuid": "a5c3575f-b166-47af-9d98-2d93a6f0869e",
+      "uuid": "4b8103c8-58b8-4baf-aee5-a3a13f196c8b",
       "title": "",
       "fullFile": "cypress\\integration\\galleryDom.spec.js",
       "file": "cypress\\integration\\galleryDom.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "230ef96b-851f-4d76-91a7-de3fcef9013b",
+          "uuid": "7cdf8eb1-a3d6-4ae7-b8ba-20151b41eafc",
           "title": "Gallery application",
           "fullFile": "",
           "file": "",
@@ -38,17 +38,21 @@
               "title": "can click on a small `img` image",
               "fullTitle": "Gallery application can click on a small `img` image",
               "timedOut": null,
-              "duration": 837,
-              "state": "passed",
-              "speed": "slow",
-              "pass": true,
-              "fail": false,
+              "duration": 653,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
               "pending": false,
               "context": null,
               "code": "for (var i = 0; i < images.length; i++) {\n  cy.get(\"li:nth-child(\".concat(i + 1, \")\")).click();\n  cy.get('@largeImg').should('have.attr', 'src', \"\".concat(url).concat(images[i]));\n}\n;",
-              "err": {},
-              "uuid": "8d505131-8b27-4c2e-8a11-bc2143837046",
-              "parentUUID": "230ef96b-851f-4d76-91a7-de3fcef9013b",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://localhost:8080/\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Gallery application`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://localhost:8080/\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Gallery application`\n    at http://localhost:8080/__cypress/runner/cypress_runner.js:157791:25\n    at visitFailedByErr (http://localhost:8080/__cypress/runner/cypress_runner.js:157162:12)\n    at http://localhost:8080/__cypress/runner/cypress_runner.js:157771:13\n    at tryCatcher (http://localhost:8080/__cypress/runner/cypress_runner.js:10325:23)\n    at Promise._settlePromiseFromHandler (http://localhost:8080/__cypress/runner/cypress_runner.js:8260:31)\n    at Promise._settlePromise (http://localhost:8080/__cypress/runner/cypress_runner.js:8317:18)\n    at Promise._settlePromise0 (http://localhost:8080/__cypress/runner/cypress_runner.js:8362:10)\n    at Promise._settlePromises (http://localhost:8080/__cypress/runner/cypress_runner.js:8438:18)\n    at _drainQueueStep (http://localhost:8080/__cypress/runner/cypress_runner.js:5032:12)\n    at _drainQueue (http://localhost:8080/__cypress/runner/cypress_runner.js:5025:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:8080/__cypress/runner/cypress_runner.js:5041:5)\n    at Async.drainQueues (http://localhost:8080/__cypress/runner/cypress_runner.js:4911:14)\nFrom Your Spec Code:\n    at Context.eval (http://localhost:8080/__cypress/tests?p=cypress\\integration\\galleryDom.spec.js:103:8)",
+                "diff": null
+              },
+              "uuid": "a0db57bb-daef-47e1-96af-f103d5f6ad9b",
+              "parentUUID": "7cdf8eb1-a3d6-4ae7-b8ba-20151b41eafc",
               "isHook": false,
               "skipped": false
             },
@@ -56,30 +60,31 @@
               "title": "can click on `a` outside of image",
               "fullTitle": "Gallery application can click on `a` outside of image",
               "timedOut": null,
-              "duration": 613,
-              "state": "passed",
-              "speed": "slow",
-              "pass": true,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "for (var i = 0; i < images.length; i++) {\n  cy.get(\"[title=\\\"Image \".concat(i + 1, \"\\\"]\")).click();\n  cy.get('@largeImg').should('have.attr', 'src', \"\".concat(url).concat(images[i]));\n}\n;",
               "err": {},
-              "uuid": "0ab5e590-afe3-4830-8fd6-b3a9d7f1233c",
-              "parentUUID": "230ef96b-851f-4d76-91a7-de3fcef9013b",
+              "uuid": "09ab452c-41a4-44d7-bce7-c707d3824250",
+              "parentUUID": "7cdf8eb1-a3d6-4ae7-b8ba-20151b41eafc",
               "isHook": false,
-              "skipped": false
+              "skipped": true
             }
           ],
           "suites": [],
-          "passes": [
-            "8d505131-8b27-4c2e-8a11-bc2143837046",
-            "0ab5e590-afe3-4830-8fd6-b3a9d7f1233c"
+          "passes": [],
+          "failures": [
+            "a0db57bb-daef-47e1-96af-f103d5f6ad9b"
           ],
-          "failures": [],
           "pending": [],
-          "skipped": [],
-          "duration": 1450,
+          "skipped": [
+            "09ab452c-41a4-44d7-bce7-c707d3824250"
+          ],
+          "duration": 653,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
