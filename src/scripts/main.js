@@ -3,8 +3,8 @@
 const mainPicture = document.querySelector('.gallery__large-img');
 const galleryList = document.querySelector('.gallery__list');
 
-galleryList.addEventListener('click', (event) => {
-  event.preventDefault();
+galleryList.addEventListener('click', (e) => {
+  e.preventDefault();
 
-  mainPicture.src = event.target.closest('.list-item__link').href;
+  mainPicture.src = e.target.closest('.list-item__link').href;
 });
