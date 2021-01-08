@@ -7,5 +7,6 @@ photoLinks.addEventListener('click', (e) => {
   e.preventDefault();
 
   const link = e.target.closest('.list-item__link');
+
   mainPhoto.src = link.href;
 });
