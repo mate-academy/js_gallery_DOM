@@ -1,11 +1,11 @@
 'use strict';
 
-const links = [...document.querySelectorAll('.list-item__link')];
 const display = document.querySelector('#largeImg');
 
-for (const link of links) {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    display.src = e.currentTarget.href;
-  });
-}
+document.querySelector('body').addEventListener('click', (e) => {
+  e.preventDefault();
+
+  if (e.target.classList.contains('gallery__thumb')) {
+    display.src = e.target.parentElement.href;
+  }
+});
