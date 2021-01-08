@@ -4,15 +4,13 @@ const gallary = document.querySelector('.gallery');
 const langePhoto = document.querySelector('.gallery__large-img');
 
 gallary.addEventListener('click', (clickEvent) => {
-  const target = clickEvent.target;
+  const target = clickEvent.target.closest('.list-item__link');
 
   clickEvent.preventDefault();
 
-  if (target.className === 'list-item__link') {
-    langePhoto.src = target.href;
-
+  if (!target || !gallary.contains(target)) {
     return;
   }
 
-  langePhoto.src = target.src;
+  langePhoto.src = target.href;
 });
