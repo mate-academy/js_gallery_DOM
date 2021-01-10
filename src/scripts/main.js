@@ -1,11 +1,15 @@
 'use strict';
 
-const listItemLinks = document.querySelectorAll('.list-item__link');
+const body = document.querySelector('body');
 const largeImg = document.querySelector('#largeImg');
+const thumbs = document.querySelector('#thumbs');
 
-for (const link of listItemLinks) {
-  link.addEventListener('click', (e) => {
-    largeImg.src = link.href;
-    e.preventDefault();
-  });
-}
+body.addEventListener('click', (e) => {
+  e.preventDefault();
+});
+
+thumbs.addEventListener('click', (e) => {
+  if (e.target.tagName === 'IMG') {
+    largeImg.src = e.target.parentElement.href;
+  }
+});
