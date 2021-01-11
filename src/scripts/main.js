@@ -5,5 +5,8 @@ const currentImage = document.querySelector('#largeImg');
 
 list.addEventListener('click', (e) => {
   e.preventDefault();
-  currentImage.src = e.target.parentElement.href;
+
+  if (e.target) {
+    currentImage.src = e.target.parentElement.href;
+  }
 });
