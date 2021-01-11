@@ -2,12 +2,12 @@
 
 const imgMain = document.querySelector('#largeImg');
 
-const imgCollection = document.querySelectorAll('.list-item__link');
+const gallery = document.querySelector('.gallery');
 
-for (const image of imgCollection) {
-  image.addEventListener('click', (e) => {
+gallery.addEventListener('click', (e) => {
+  if (e.target.classList.contains('gallery__thumb')) {
     e.preventDefault();
 
-    imgMain.src = e.currentTarget.href;
-  });
-}
+    imgMain.src = e.target.closest('.list-item__link').href;
+  }
+});
