@@ -1,12 +1,11 @@
 'use strict';
 
 const img = document.getElementById('thumbs');
+const mainImg = document.getElementById('largeImg');
 
 img.addEventListener('click', () => {
-  event.preventDefault();
-
   const item = event.target.closest('.list-item__link');
-  const mainImg = document.getElementById('largeImg');
 
+  event.preventDefault();
   mainImg.src = item.href;
 });
