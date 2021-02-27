@@ -8,7 +8,8 @@ list.addEventListener('click', (e) => {
 
   const item = e.target;
 
-  if (item.parentNode.href !== undefined) {
-    img.src = item.parentNode.href;
+  if (!item.closest('a')) {
+    return;
   }
+  img.src = item.parentNode.href;
 });
