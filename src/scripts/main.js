@@ -1,12 +1,12 @@
 'use strict';
 
 const galeryList = document.querySelector('.gallery__list');
-const MainPicture = document.getElementById('largeImg');
+const mainPicture = document.getElementById('largeImg');
 
 galeryList.addEventListener('click', e => {
   e.preventDefault();
 
   const closestLink = e.target.closest('.list-item__link');
 
-  MainPicture.src = closestLink.href;
+  mainPicture.src = closestLink.href;
 });
