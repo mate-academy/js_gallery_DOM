@@ -3,7 +3,7 @@
 const largeImg = document.querySelector('#largeImg');
 const galleryList = document.querySelector('.gallery__list');
 
-const handler = function(e) {
+const clickHandler = function(e) {
   e.preventDefault();
 
   if (e.target.tagName === 'A') {
@@ -13,4 +13,4 @@ const handler = function(e) {
   }
 };
 
-galleryList.addEventListener('click', handler);
+galleryList.addEventListener('click', clickHandler);
