@@ -6,11 +6,9 @@ const galleryList = document.querySelector('.gallery__list');
 const clickHandler = function(e) {
   e.preventDefault();
 
-  if (e.target.tagName === 'A') {
-    largeImg.src = e.target.href;
-  } else if (e.target.tagName === 'IMG') {
-    largeImg.src = e.path[1].href;
-  }
+  const clicked = e.target.closest('.list-item__link');
+
+  largeImg.src = clicked.href;
 };
 
 galleryList.addEventListener('click', clickHandler);
