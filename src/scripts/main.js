@@ -3,16 +3,16 @@
 const list = document.querySelector('ul');
 const bigImage = document.getElementById('largeImg');
 
-function changeImage(element) {
-  element.preventDefault();
+function changeImage(ev) {
+  ev.preventDefault();
 
-  const elementTarget = element.target.closest('a');
+  const element = ev.target.closest('a');
 
-  if (!elementTarget || !list.contains(elementTarget)) {
+  if (!element || !list.contains(element)) {
     return;
   }
 
-  bigImage.src = elementTarget.href;
+  bigImage.src = element.href;
 }
 
 list.addEventListener('click', changeImage);
