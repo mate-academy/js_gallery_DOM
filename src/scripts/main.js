@@ -4,9 +4,8 @@ const ulElement = document.querySelector('.gallery__list');
 
 const mainImage = document.querySelector('#largeImg');
 
-// eslint-disable-next-line no-shadow
-ulElement.addEventListener('click', (event) => {
-  event.preventDefault();
+ulElement.addEventListener('click', (clickEvent) => {
+  clickEvent.preventDefault();
 
-  mainImage.setAttribute('src', event.target.parentElement.href);
+  mainImage.setAttribute('src', clickEvent.target.parentElement.href);
 });
