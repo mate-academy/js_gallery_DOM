@@ -8,5 +8,9 @@ imagesContainer.addEventListener('click', (e) => {
 
   const foundElement = e.target.closest('.list-item__link');
 
+  if (!foundElement) {
+    return;
+  }
+
   largeImage.src = foundElement.href;
 });
