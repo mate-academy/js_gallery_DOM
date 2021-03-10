@@ -8,5 +8,8 @@ galleryList.addEventListener('click', e => {
 
   const closest = e.target.closest('.list-item__link');
 
+  if (!closest) {
+    return;
+  }
   mainPicture.src = closest.href;
 });
