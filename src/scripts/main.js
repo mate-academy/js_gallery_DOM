@@ -1,14 +1,14 @@
 'use strict';
 
-const largeImg = document.querySelector('#largeImg');
-const imgList = document.querySelector('#thumbs');
+const largeImage = document.querySelector('#largeImg');
+const imageList = document.querySelector('#thumbs');
 
-imgList.addEventListener('click', (action) => {
+imageList.addEventListener('click', (action) => {
   action.preventDefault();
 
-  const imgLink = action.target.closest('.list-item__link');
+  const imageLink = action.target.closest('.list-item__link');
 
-  if (imgLink || imgList.contains(imgLink)) {
-    largeImg.src = imgLink.href;
+  if (imageLink || imageList.contains(imageLink)) {
+    largeImage.src = imageLink.href;
   }
 });
