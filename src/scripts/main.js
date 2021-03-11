@@ -6,7 +6,7 @@ const largeImage = document.querySelector('#largeImg');
 gallery.addEventListener('click', (clickEvent) => {
   clickEvent.preventDefault();
 
-  const clickedImage = clickEvent.target.closest('a');
+  const clickedImage = clickEvent.target.closest('.list-item__link');
 
   if (!clickedImage) {
     return;
