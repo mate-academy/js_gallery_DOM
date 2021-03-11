@@ -10,5 +10,9 @@ galleryList.addEventListener('click', (event) => {
 
   const link = event.target.closest('.list-item__link');
 
+  if (!link || !galleryList.contains(link)) {
+    return;
+  }
+
   largeImage.src = link.href;
 });
