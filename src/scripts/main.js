@@ -6,5 +6,9 @@ const largeImg = document.getElementById('largeImg');
 list.addEventListener('click', (smallImg) => {
   smallImg.preventDefault();
 
-  largeImg.src = smallImg.target.parentNode.href;
+  const imageLink = smallImg.target.closest('.list-item__link').href;
+
+  if (imageLink) {
+    largeImg.src = imageLink;
+  }
 });
