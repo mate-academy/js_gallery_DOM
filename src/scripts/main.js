@@ -3,10 +3,13 @@
 const imagesList = document.body.querySelector('.gallery__list');
 const mainImg = document.body.querySelector('#largeImg');
 
-imagesList.addEventListener('click', (e) => {
-  e.preventDefault();
+imagesList.addEventListener('click', (clickEvent) => {
+  clickEvent.preventDefault();
 
-  const closestElement = e.target.closest('.list-item__link');
+  const closestElement = clickEvent.target.closest('.list-item__link');
 
+  if (!closestElement) {
+    return;
+  }
   mainImg.src = closestElement.href;
 });
