@@ -8,5 +8,9 @@ imagesList.addEventListener('click', () => {
 
   const newMainImage = event.target.closest('.list-item__link');
 
+  if (!newMainImage && imagesList.contains(newMainImage)) {
+    return;
+  }
+
   mainImage.src = newMainImage.href;
 });
