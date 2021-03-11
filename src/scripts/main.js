@@ -3,14 +3,14 @@
 const gallery = document.querySelector('.gallery__list');
 const largeImg = document.getElementById('largeImg');
 
-gallery.addEventListener('click', (e) => {
-  e.preventDefault();
+gallery.addEventListener('click', (clickEvent) => {
+  clickEvent.preventDefault();
 
-  const clicked = e.target.closest('.list-item__link');
+  const imageClicked = clickEvent.target.closest('.list-item__link');
 
-  if (!clicked) {
+  if (!imageClicked) {
     return;
   };
 
-  largeImg.src = clicked.href;
+  largeImg.src = imageClicked.href;
 });
