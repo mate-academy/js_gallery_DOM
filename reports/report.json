@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-03-12T18:49:05.521Z",
+    "end": "2021-03-12T18:49:06.738Z",
+    "duration": 1186,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2950776b-7917-4af9-a47c-02a16f21331c",
+      "title": "",
+      "fullFile": "cypress\\integration\\galleryDom.spec.js",
+      "file": "cypress\\integration\\galleryDom.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8a82efd6-4e57-45d4-b100-9f0629f5e2ed",
+          "title": "Gallery application",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "can click on a small `img` image",
+              "fullTitle": "Gallery application can click on a small `img` image",
+              "timedOut": null,
+              "duration": 664,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "for (var i = 0; i < images.length; i++) {\n  cy.get(\"li:nth-child(\".concat(i + 1, \")\")).click();\n  cy.get('@largeImg').should('have.attr', 'src', \"\".concat(url).concat(images[i]));\n}\n;",
+              "err": {},
+              "uuid": "842f362a-6135-4ec8-973e-2a201cff6db2",
+              "parentUUID": "8a82efd6-4e57-45d4-b100-9f0629f5e2ed",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "can click on `a` outside of image",
+              "fullTitle": "Gallery application can click on `a` outside of image",
+              "timedOut": null,
+              "duration": 522,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "for (var i = 0; i < images.length; i++) {\n  cy.get(\"[title=\\\"Image \".concat(i + 1, \"\\\"]\")).click();\n  cy.get('@largeImg').should('have.attr', 'src', \"\".concat(url).concat(images[i]));\n}\n;",
+              "err": {},
+              "uuid": "4105efda-30cd-44e6-b683-cd238119313c",
+              "parentUUID": "8a82efd6-4e57-45d4-b100-9f0629f5e2ed",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "842f362a-6135-4ec8-973e-2a201cff6db2",
+            "4105efda-30cd-44e6-b683-cd238119313c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1186,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "raw_reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}
