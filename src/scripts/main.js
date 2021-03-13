@@ -8,7 +8,9 @@ imgList.addEventListener('click', (action) => {
 
   const imgLink = action.target.closest('.list-item__link');
 
-  if (!imgLink || imgList.contains(imgLink)) {
-    largeImg.src = imgLink.href;
+  if (!imgLink) {
+    return false;
   }
+
+  largeImg.src = imgLink.href;
 });
