@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2021-03-26T10:20:44.935Z",
-    "end": "2021-03-26T10:20:46.635Z",
-    "duration": 1640,
+    "start": "2021-03-26T15:29:12.452Z",
+    "end": "2021-03-26T15:29:14.258Z",
+    "duration": 1774,
     "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "ab7c4749-bb61-44cf-9c05-7e04a5d03b5b",
+      "uuid": "4529bd1f-1ea0-43a2-9622-d93cc09388fc",
       "title": "",
       "fullFile": "cypress\\integration\\galleryDom.spec.js",
       "file": "cypress\\integration\\galleryDom.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "e37ff3b0-2462-4007-8a56-ccf7792bdd77",
+          "uuid": "ff23260d-2d9f-4c42-a7d5-8eb9e1ce484c",
           "title": "Gallery application",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "can click on a small `img` image",
               "fullTitle": "Gallery application can click on a small `img` image",
               "timedOut": null,
-              "duration": 994,
+              "duration": 1101,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "for (var i = 0; i < images.length; i++) {\n  cy.get(\"li:nth-child(\".concat(i + 1, \")\")).click();\n  cy.get('@largeImg').should('have.attr', 'src', \"\".concat(url).concat(images[i]));\n}\n;",
               "err": {},
-              "uuid": "5d8d21d1-3c6d-412b-9f84-f242e9db4397",
-              "parentUUID": "e37ff3b0-2462-4007-8a56-ccf7792bdd77",
+              "uuid": "e4f41699-7b0d-4b89-bb42-1f81c2159f72",
+              "parentUUID": "ff23260d-2d9f-4c42-a7d5-8eb9e1ce484c",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "can click on `a` outside of image",
               "fullTitle": "Gallery application can click on `a` outside of image",
               "timedOut": null,
-              "duration": 646,
+              "duration": 673,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -65,21 +65,21 @@
               "context": null,
               "code": "for (var i = 0; i < images.length; i++) {\n  cy.get(\"[title=\\\"Image \".concat(i + 1, \"\\\"]\")).click();\n  cy.get('@largeImg').should('have.attr', 'src', \"\".concat(url).concat(images[i]));\n}\n;",
               "err": {},
-              "uuid": "cc954308-4649-4312-b558-e12edd13134c",
-              "parentUUID": "e37ff3b0-2462-4007-8a56-ccf7792bdd77",
+              "uuid": "959f97b4-7fb0-439f-a650-7d67df05e6a7",
+              "parentUUID": "ff23260d-2d9f-4c42-a7d5-8eb9e1ce484c",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "5d8d21d1-3c6d-412b-9f84-f242e9db4397",
-            "cc954308-4649-4312-b558-e12edd13134c"
+            "e4f41699-7b0d-4b89-bb42-1f81c2159f72",
+            "959f97b4-7fb0-439f-a650-7d67df05e6a7"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1640,
+          "duration": 1774,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
