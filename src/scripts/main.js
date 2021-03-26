@@ -3,14 +3,10 @@
 const largeImage = document.getElementById('largeImg');
 const list = document.getElementById('thumbs');
 
-list.addEventListener('click', () => {
-  event.preventDefault();
+list.addEventListener('click', (e) => {
+  e.preventDefault();
 
-  const picture = event.target.closest('.list-item__link');
-
-  if (!picture) {
-    return;
-  }
+  const picture = e.target.closest('.list-item__link');
 
   largeImage.src = picture.href;
 });
