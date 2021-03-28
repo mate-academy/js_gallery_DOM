@@ -16,19 +16,19 @@ gallery.addEventListener('click', (galleryEvent) => {
   }
 
   if (galleryEvent.target.parentElement.getAttribute('title') === 'Image 1') {
-    clickedImageSrc = 'http://localhost:8080/images/landscape-first.png';
+    clickedImageSrc = '/images/landscape-first.png';
   } else if (galleryEvent.target.parentElement.getAttribute('title')
     === 'Image 2') {
-    clickedImageSrc = 'http://localhost:8080/images/landscape-second.png';
+    clickedImageSrc = '/images/landscape-second.png';
   } else if (galleryEvent.target.parentElement.getAttribute('title')
     === 'Image 3') {
-    clickedImageSrc = 'http://localhost:8080/images/landscape-third.png';
+    clickedImageSrc = '/images/landscape-third.png';
   } else if (galleryEvent.target.parentElement.getAttribute('title')
     === 'Image 4') {
-    clickedImageSrc = 'http://localhost:8080/images/landscape-fourth.png';
+    clickedImageSrc = '/images/landscape-fourth.png';
   } else if (galleryEvent.target.parentElement.getAttribute('title')
     === 'Image 5') {
-    clickedImageSrc = 'http://localhost:8080/images/landscape-fifth.png';
+    clickedImageSrc = '/images/landscape-fifth.png';
   }
   document.getElementById('largeImg').setAttribute('src', clickedImageSrc);
 });
