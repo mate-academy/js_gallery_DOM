@@ -1,9 +1,9 @@
 'use strict';
 
-const littleImg = document.getElementById('thumbs');
+const smallImg = document.getElementById('thumbs');
 const bigImg = document.getElementById('largeImg');
 
-littleImg.onclick = function(click) {
+smallImg.onclick = function(click) {
   click.preventDefault();
   bigImg.src = click.target.closest('a');
 };
