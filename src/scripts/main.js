@@ -11,12 +11,5 @@ gallery.addEventListener('click', (galleryEvent) => {
     return;
   }
 
-  const clickedImageSrc = getSrcFromThumb(
-    item.firstElementChild.getAttribute('src'));
-
-  document.getElementById('largeImg').setAttribute('src', clickedImageSrc);
+  document.getElementById('largeImg').setAttribute('src', item['href']);
 });
-
-function getSrcFromThumb(attribute) {
-  return 'images/' + attribute.replace('-thumb', '').split('.')[0] + '.png';
-}
