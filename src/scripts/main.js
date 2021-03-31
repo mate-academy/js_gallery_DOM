@@ -5,16 +5,14 @@ const gallery = document.getElementsByClassName('gallery')[0];
 gallery.addEventListener('click', (galleryEvent) => {
   galleryEvent.preventDefault();
 
-  if (galleryEvent.target.classList.contains('gallery__large-img')
-    || galleryEvent.target.classList.contains('gallery')
-    || galleryEvent.target.classList.contains('gallery__list')
-    || galleryEvent.target.classList.contains('list-item__link')
-    || galleryEvent.target.tagName === 'DIV') {
+  const item = galleryEvent.target.closest('.list-item__link');
+
+  if (!item) {
     return;
   }
 
   const clickedImageSrc = getSrcFromThumb(
-    galleryEvent.target.getAttribute('src'));
+    item.firstElementChild.getAttribute('src'));
 
   document.getElementById('largeImg').setAttribute('src', clickedImageSrc);
 });
