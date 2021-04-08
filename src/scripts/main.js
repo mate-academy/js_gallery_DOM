@@ -1,12 +1,15 @@
 'use strict';
 
 const largeImg = document.getElementById('largeImg');
-const minImg = document.querySelectorAll('a');
-const minImgArr = [...minImg];
+const gallery = document.querySelector('.gallery');
 
-minImgArr.forEach((item, i) => {
-  minImg[i].addEventListener('click', (ev) => {
-    largeImg.src = item.getAttribute('href');
-    ev.preventDefault();
-  });
+gallery.addEventListener('click', (ev) => {
+  const item = ev.target.closest('.list-item');
+
+  ev.preventDefault();
+
+  if (!item) {
+    return;
+  }
+  largeImg.src = item.children[0].getAttribute('href');
 });
