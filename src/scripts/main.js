@@ -1,7 +1,7 @@
 'use strict';
 
 const largeImg = document.getElementById('largeImg');
-const gallery = document.querySelector('.gallery');
+const gallery = document.querySelector('.gallery__list');
 
 gallery.addEventListener('click', (ev) => {
   const item = ev.target.closest('.list-item');
