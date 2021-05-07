@@ -8,5 +8,5 @@ gallery.addEventListener('click', (e) => {
 
   largeImg.setAttribute('src',
     `http://localhost:8080${e.target.closest('a').getAttribute('href')}`
-      .replace(/\\/, ''));
+      .replace(/\\/, '/'));
 });
