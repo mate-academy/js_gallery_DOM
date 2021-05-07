@@ -6,12 +6,11 @@ const largeImg = document.querySelector('#largeImg');
 gallery.addEventListener('click', (occurrent) => {
   occurrent.preventDefault();
 
-  const item = occurrent.target;
+  const item = occurrent.target.closest('.list-item__link');
 
-  if (!item.classList.contains('list-item__link')
-  && !item.classList.contains('gallery__img')) {
+  if (!item) {
     return;
   }
 
-  largeImg.src = item.src;
+  largeImg.src = item.href;
 });
