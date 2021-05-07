@@ -1,15 +1,12 @@
 'use strict';
 
 const largeImg = document.getElementById('largeImg');
-const list = document.getElementsByClassName('list-item');
-const links = document.getElementsByClassName('list-item__link');
+const gallery = document.querySelector('.gallery');
 
-for (let i = 0; i < list.length; i++) {
-  [...list][i].addEventListener('click', (li) => {
-    li.preventDefault();
+gallery.addEventListener('click', (e) => {
+  e.preventDefault();
 
-    largeImg.setAttribute('src',
-      `http://localhost:8080${[...links][i].getAttribute('href')}`
-        .replace(/\\/, '/'));
-  });
-};
+  largeImg.setAttribute('src',
+    `http://localhost:8080${e.target.closest('a').getAttribute('href')}`
+      .replace(/\\/, ''));
+});
