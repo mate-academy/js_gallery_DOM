@@ -5,5 +5,8 @@ const mainPicture = document.getElementById('largeImg');
 
 pictureList.addEventListener('click', (eventTrigger) => {
   eventTrigger.preventDefault();
-  mainPicture.src = `${eventTrigger.target.parentNode.href}`;
+
+  const targetLink = eventTrigger.target.closest('.list-item__link').href;
+
+  mainPicture.src = targetLink;
 });
