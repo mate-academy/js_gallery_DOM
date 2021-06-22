@@ -7,7 +7,7 @@ const defaultSrc = bigImg.src;
 listImg.addEventListener('click', (e) => {
   e.preventDefault();
 
-  if (e.target.classList.contains('gallery__img')) {
+  if (e.target.closest('.gallery__img')) {
     bigImg.src = e.target.src;
   } else {
     bigImg.src = defaultSrc;
