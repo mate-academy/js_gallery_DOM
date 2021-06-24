@@ -7,8 +7,10 @@ const defaultSrc = bigImg.src;
 listImg.addEventListener('click', (e) => {
   e.preventDefault();
 
-  if (e.target.closest('.gallery__img')) {
-    bigImg.src = e.target.src;
+  const link = e.target.closest('.list-item__link');
+
+  if (link) {
+    bigImg.src = link.href;
   } else {
     bigImg.src = defaultSrc;
   }
