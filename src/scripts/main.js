@@ -16,6 +16,6 @@ allGalleryImages.map(value => {
   });
 });
 
-[ ...document.querySelectorAll('.list-item__link') ].map(item => {
+allImagesLinks.map(item => {
   item.addEventListener('click', (occasion) => occasion.preventDefault());
 });
