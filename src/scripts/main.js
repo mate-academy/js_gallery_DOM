@@ -8,11 +8,9 @@ allGalleryImages.map(value => {
   value.addEventListener('click', (occasion) => {
     value.classList.add('gallery__large-img');
 
-    if (occasion.target.src !== undefined) {
-      allImagesLinks.map(item => item.addEventListener('click', () => {
-        mainImages.src = item.href;
-      }));
-    }
+    allImagesLinks.map(item => item.addEventListener('click', () => {
+      mainImages.src = item.href;
+    }));
   });
 });
 
