@@ -1,17 +1,10 @@
 'use strict';
 
-const allGalleryImages = [ ...document.querySelectorAll('.gallery__img') ];
+const mainImage = document.querySelector('.gallery__large-img');
 const allImagesLinks = [ ...document.querySelectorAll('.list-item__link') ];
-const mainImages = document.querySelector('#largeImg');
 
-allGalleryImages.map(value => {
-  value.addEventListener('click', () => {
-    allImagesLinks.map(item => item.addEventListener('click', () => {
-      mainImages.src = item.href;
-    }));
-  });
-});
-
-allImagesLinks.map(item => {
-  item.addEventListener('click', (occasion) => occasion.preventDefault());
-});
+allImagesLinks.map(x =>
+  x.addEventListener('click', e => {
+    mainImage.src = e.target.closest('a').href;
+    e.preventDefault();
+  }));
