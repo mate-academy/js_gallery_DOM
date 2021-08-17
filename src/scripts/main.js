@@ -2,12 +2,12 @@
 
 const bigImage = document.querySelector('#largeImg');
 
-const links = document.querySelectorAll('.list-item__link');
+const galleryList = document.querySelector('.gallery__list');
 
-for (const elem of links) {
-  // eslint-disable-next-line no-shadow
-  elem.addEventListener('click', (event) => {
-    event.preventDefault();
-    bigImage.src = elem.href;
-  });
-}
+galleryList.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  const element = e.target.closest('.list-item__link');
+
+  bigImage.src = element.href;
+});
