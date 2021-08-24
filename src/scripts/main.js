@@ -1,17 +1,12 @@
 'use strict';
 
-const imageList = document.querySelector('.gallery__list');
+const gallery = document.querySelector('.gallery');
 const largeImage = document.querySelector('#largeImg');
-const links = document.querySelectorAll('.list-item__link');
 
-for (const link of links) {
-  link.addEventListener('click', (eventLink) => {
-    eventLink.preventDefault();
-  });
-}
+gallery.addEventListener('click', (eventLink) => {
+  eventLink.preventDefault();
+  
+  const image = eventLink.target.closest('.list-item__link');
 
-imageList.addEventListener('click', (eventImg) => {
-  const image = eventImg.target.closest('.gallery__img');
-
-  largeImage.src = image.parentElement.href;
+  largeImage.src = image.href;
 });
