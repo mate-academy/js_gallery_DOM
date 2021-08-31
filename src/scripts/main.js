@@ -5,7 +5,7 @@ const groupOfImages = document.getElementById('largeImg');
 const newArr = [...images];
 
 for (let i = 0; i < newArr.length; i++) {
-  images[i].addEventListener('click', () => {
+  newArr[i].addEventListener('click', () => {
     const newPic = event.target.closest('.list-item__link');
 
     event.preventDefault();
