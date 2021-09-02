@@ -1,12 +1,10 @@
 'use strict';
 
-const mainImg = document.getElementById('largeImg');
-const images = document.querySelectorAll('.gallery__img');
+const mainImg = document.querySelector('.gallery__img');
+const images = document.querySelector('.gallery__list');
 
-for (const item of images) {
-  item.addEventListener('click', (elem) => {
-    elem.preventDefault();
+images.addEventListener('click', (ev) => {
+  ev.preventDefault();
 
-    mainImg.src = item.src;
-  });
-};
+  mainImg.src = ev.target.closest('.list-item__link').href;
+});
