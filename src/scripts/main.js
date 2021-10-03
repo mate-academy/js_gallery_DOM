@@ -7,7 +7,7 @@ thumbs.addEventListener('click', (e) => {
   e.preventDefault();
 
   if (e.target.tagName === 'IMG') {
-    const linkImg = e.target.getAttribute('src');
+    const linkImg = e.target.parentElement.getAttribute('href');
 
     mainImage.setAttribute('src', linkImg);
   };
