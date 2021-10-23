@@ -1,16 +1,16 @@
 'use strict';
 
-const handler = function(e) {
-  const thumb = e.target.closest('a');
+const handlerClick = function(clickEvent) {
+  const thumb = clickEvent.target.closest('.list-item__link');
 
   if (!thumb) {
     return;
   }
 
-  e.preventDefault();
+  clickEvent.preventDefault();
   mainImage.src = thumb.href;
 };
-const galleryList = document.getElementById('thumbs');
-const mainImage = document.getElementById('largeImg');
+const galleryList = document.querySelector('#thumbs');
+const mainImage = document.querySelector('#largeImg');
 
-galleryList.addEventListener('click', handler);
+galleryList.addEventListener('click', handlerClick);
