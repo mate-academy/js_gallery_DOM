@@ -1,7 +1,8 @@
 'use strict';
 
+const largePhoto = document.querySelector('#largeImg');
+
 function changeMainImage(photoLink) {
-  const largePhoto = document.querySelector('#largeImg');
   const newLargePhotoHref = photoLink.getAttribute('href');
 
   largePhoto.setAttribute('src', newLargePhotoHref);
