@@ -4,10 +4,15 @@ const bigImg = document.querySelector('#largeImg');
 const thumbs = document.querySelector('#thumbs');
 
 function changeImage(click) {
-  const img = click.target;
-
   click.preventDefault();
-  bigImg.src = img.parentElement.href;
+
+  const item = click.target.closest('.list-item__link');
+
+  if (!item) {
+    return;
+  }
+
+  bigImg.src = item.href;
 }
 
 thumbs.addEventListener('click', changeImage);
