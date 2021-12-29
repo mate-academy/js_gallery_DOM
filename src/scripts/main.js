@@ -6,5 +6,4 @@ const bigImg = document.querySelector('#largeImg');
 a.addEventListener('click', (e) => {
   e.preventDefault();
   bigImg.src = e.target.src;
-  bigImg.style.maxHeight = '100vh';
 });
