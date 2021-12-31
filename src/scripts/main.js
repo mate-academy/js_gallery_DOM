@@ -1,9 +1,11 @@
 'use strict';
 
-const a = document.querySelector('#thumbs');
-const bigImg = document.querySelector('#largeImg');
+const list = document.querySelector('#thumbs');
 
-a.addEventListener('click', (e) => {
+list.addEventListener('click', (e) => {
+  let bigImg = document.querySelector('#largeImg');
+
   e.preventDefault();
-  bigImg.src = e.target.parentElement.href;
+
+  bigImg.src = e.target.closest('.list-item__link').href;
 });
