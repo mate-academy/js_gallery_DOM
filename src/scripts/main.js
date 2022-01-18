@@ -8,15 +8,8 @@ let sourceOfBigImg = '';
 list.addEventListener('click', (ev) => {
   const item = ev.target;
 
-  if (item.tagName === 'A') {
-    item.preventDefault();
-    sourceOfBigImg = item.href;
-  } else {
-    const a = item.closest('a');
-
-    sourceOfBigImg = a.href;
-    ev.preventDefault();
-  }
+  sourceOfBigImg = item.closest('a').href;
+  ev.preventDefault();
 
   frame.src = sourceOfBigImg;
 });
