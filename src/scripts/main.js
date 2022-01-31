@@ -6,7 +6,11 @@ const largeImg = document.querySelector('#largeImg');
 list.addEventListener('click', (e) => {
   e.preventDefault();
 
-  const img = e.target;
+  const item = e.target.closest('.list-item__link');
 
-  largeImg.src = img.parentElement.href;
+  if (!item) {
+    return;
+  }
+
+  largeImg.src = item.href;
 });
