@@ -7,10 +7,10 @@ const large = document.getElementById('largeImg');
 list.addEventListener('click', (event) => {
   event.preventDefault();
 
-  const el = event.target.closest('.list-item__link');
+  const item = event.target.closest('.list-item__link');
 
-  if (!el) {
+  if (!item) {
     return;
   }
-  large.src = el.href;
+  large.src = item.href;
 });
