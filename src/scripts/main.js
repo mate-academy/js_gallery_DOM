@@ -7,9 +7,6 @@ const large = document.getElementById('largeImg');
 list.addEventListener('click', (event) => {
   event.preventDefault();
 
-  // const imgLinc = event.target.parentElement.getAttribute('href');
-
-  // large.src = imgLinc;
   const el = event.target.closest('.list-item__link');
 
   if (!el) {
