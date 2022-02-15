@@ -5,7 +5,7 @@ const img = document.querySelector('.gallery__large-img');
 
 list.addEventListener('click', (e) => {
   const item = e.target.closest('.gallery__img');
-
+  e.preventDefault();
   if (!item || !list.contains(item)) {
     return;
   }
