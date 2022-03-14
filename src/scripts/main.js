@@ -2,8 +2,6 @@
 
 const currentMainImage = document.getElementById('largeImg');
 
-let targetImage;
-
 const eventElem = document.getElementById('thumbs');
 
 eventElem.addEventListener('click', function(ourEvent) {
@@ -19,6 +17,5 @@ eventElem.addEventListener('click', function(ourEvent) {
     return;
   }
 
-  targetImage = ourEvent.target;
-  currentMainImage.src = targetImage.src;
+  currentMainImage.src = ourTarget.href;
 });
