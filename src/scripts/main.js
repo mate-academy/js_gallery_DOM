@@ -7,9 +7,17 @@ let targetImage;
 const eventElem = document.getElementById('thumbs');
 
 eventElem.addEventListener('click', function(ourEvent) {
-  const nearestLink = ourEvent.target.closest('a');
+  ourEvent.preventDefault();
 
-  nearestLink.preventDefault();
+  const ourTarget = ourEvent.target.closest('a');
+
+  if (!ourTarget) {
+    return;
+  }
+
+  if (!eventElem.contains(ourTarget)) {
+    return;
+  }
 
   targetImage = ourEvent.target;
   currentMainImage.src = targetImage.src;
