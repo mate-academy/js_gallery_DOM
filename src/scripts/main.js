@@ -6,9 +6,11 @@ let targetImage;
 
 const eventElem = document.getElementById('thumbs');
 
-alert(currentMainImage.src);
-
 eventElem.addEventListener('click', function(ourEvent) {
+  const nearestLink = ourEvent.target.closest('a');
+
+  nearestLink.preventDefault();
+
   targetImage = ourEvent.target;
   currentMainImage.src = targetImage.src;
 });
