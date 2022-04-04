@@ -7,11 +7,11 @@ const list = document.querySelector('.gallery__list');
 list.addEventListener('click', (event) => {
   event.preventDefault();
 
-  const item = event.target.closest('.gallery__thumb');
+  const item = event.target.closest('.list-item__link');
 
   if (!item || !list.contains(item)) {
     return;
   }
 
-  largeImage.src = item.src;
+  largeImage.src = item.href;
 });
