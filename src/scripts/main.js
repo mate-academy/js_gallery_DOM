@@ -12,7 +12,7 @@ imageList.addEventListener('click', (ev) => {
     return;
   }
 
-  let newLink = '/images/landscape-';
+  let newLink = './images/landscape-';
   const targetNumber = item.closest('.list-item__link').title;
 
   switch (targetNumber) {
@@ -37,5 +37,5 @@ imageList.addEventListener('click', (ev) => {
       break;
   }
 
-  largeImage.setAttribute('src', newLink);
+  largeImage.src = `${newLink}`;
 });
