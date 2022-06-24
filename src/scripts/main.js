@@ -15,7 +15,7 @@ function replaceImg(click) {
 
   switch (click.target.tagName) {
     case 'A':
-      largeImg.src = click.target.src;
+      largeImg.src = click.target.href;
       break;
     case 'IMG':
       largeImg.src = click.target.parentElement.href;
