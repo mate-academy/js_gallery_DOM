@@ -1,16 +1,16 @@
 'use strict';
 
 const ul = document.querySelector('#thumbs');
+const largeImg = document.querySelector('#largeImg');
 
-ul.addEventListener('click', () => {
-  const thumbs = event.target.closest('a');
+ul.addEventListener('click', (e) => {
+  const thumb = e.target.closest('a');
 
-  showNail(thumbs.href);
-  event.preventDefault();
+  e.preventDefault();
+
+  getThumb(thumb.href, thumb.tilte);
 });
 
-let largeImg;
-
-function showNail(href) {
+function getThumb(href) {
   largeImg.src = href;
 }
