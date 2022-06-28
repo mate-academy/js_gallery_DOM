@@ -8,15 +8,18 @@
 ### Task: Create a gallery
 
 Create an image gallery where the main image changes by the click on a thumbnail.
-
+Создайте галерею изображений, в которой основное изображение меняется при нажатии на миниатюру.
 **Requirements:**
-- A click can be either on a small `img` image or on `a` outside of it. `event.target`
+- A click can be either on a small `img` image or on `a` outside of it. 
+- Щелчок может быть как на маленьком изображении `img`, так и на `a` за его пределами.`event.target`
  will be, respectively, either `img` or `a`.
+будет, соответственно, либо `img`, либо `a`.
 
 **Notes:**
 
 - Use event delegation.
 - You must only modify the file `src/scripts/main.js`.
 
+- Используйте делегирование событий.
 ### Gif of result
 ![Gif example](./src/images/example.gif)
