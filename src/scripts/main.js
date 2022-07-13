@@ -7,5 +7,7 @@ gallery.addEventListener('click', (occasion) => {
 
   occasion.preventDefault();
 
-  document.querySelector('#largeImg').src = item.href;
+  if (item) {
+    document.querySelector('#largeImg').src = item.href;
+  }
 });
