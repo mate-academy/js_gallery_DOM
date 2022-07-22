@@ -1,7 +1,7 @@
 'use strict';
 
-const largeImg = document.getElementById('largeImg');
-const listOfImages = document.getElementById('thumbs');
+const largeImg = document.querySelector('.gallery__large-img');
+const listOfImages = document.querySelector('.gallery__list');
 
 listOfImages.addEventListener('click', (element) => {
   const link = element.target.closest('a');

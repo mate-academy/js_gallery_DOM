@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2022-07-21T10:37:23.986Z",
-    "end": "2022-07-21T10:37:25.517Z",
-    "duration": 1504,
+    "start": "2022-07-22T11:19:44.863Z",
+    "end": "2022-07-22T11:19:46.116Z",
+    "duration": 1223,
     "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "5dbcfc32-e022-4612-9473-056bf3a487b3",
+      "uuid": "ed51fbcc-9333-45de-bef5-c4739c1316b5",
       "title": "",
       "fullFile": "cypress/integration/galleryDom.spec.js",
       "file": "cypress/integration/galleryDom.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "df7d127a-c28f-497f-aa69-377023d5daa2",
+          "uuid": "77cd5947-4ec4-41b0-a72c-4eee256753a5",
           "title": "Gallery application",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "can click on a small `img` image",
               "fullTitle": "Gallery application can click on a small `img` image",
               "timedOut": null,
-              "duration": 962,
+              "duration": 681,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "for (var i = 0; i < images.length; i++) {\n  cy.get(\"li:nth-child(\".concat(i + 1, \")\")).click();\n  cy.get('@largeImg').should('have.attr', 'src', \"\".concat(url).concat(images[i]));\n}\n;",
               "err": {},
-              "uuid": "d6e65b7f-86b8-4b8b-8aef-b6ef45e0cae6",
-              "parentUUID": "df7d127a-c28f-497f-aa69-377023d5daa2",
+              "uuid": "357ebb4c-1b5d-4745-a2a2-c6936a72b2bf",
+              "parentUUID": "77cd5947-4ec4-41b0-a72c-4eee256753a5",
               "isHook": false,
               "skipped": false
             },
@@ -65,21 +65,21 @@
               "context": null,
               "code": "for (var i = 0; i < images.length; i++) {\n  cy.get(\"[title=\\\"Image \".concat(i + 1, \"\\\"]\")).click();\n  cy.get('@largeImg').should('have.attr', 'src', \"\".concat(url).concat(images[i]));\n}\n;",
               "err": {},
-              "uuid": "80ee9792-641b-4725-979d-0c8478d3d6cc",
-              "parentUUID": "df7d127a-c28f-497f-aa69-377023d5daa2",
+              "uuid": "c399cab0-53e2-41c5-9c72-0e5b500cc2bc",
+              "parentUUID": "77cd5947-4ec4-41b0-a72c-4eee256753a5",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "d6e65b7f-86b8-4b8b-8aef-b6ef45e0cae6",
-            "80ee9792-641b-4725-979d-0c8478d3d6cc"
+            "357ebb4c-1b5d-4745-a2a2-c6936a72b2bf",
+            "c399cab0-53e2-41c5-9c72-0e5b500cc2bc"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1504,
+          "duration": 1223,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
