@@ -1,11 +1,14 @@
 'use strict';
 
-const thumbs = document.getElementsByClassName('list-item__link');
+const thumbs = document.querySelector('.gallery__list');
 const bigImg = document.querySelector('#largeImg');
 
-for (const link of thumbs) {
-  link.addEventListener('click', eve => {
-    eve.preventDefault();
+thumbs.addEventListener('click', clickEvent => {
+  clickEvent.preventDefault();
+
+  const link = clickEvent.target.closest('.list-item__link');
+
+  if (link) {
     bigImg.src = link.href;
-  });
-}
+  }
+});
