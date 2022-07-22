@@ -1,14 +1,12 @@
 'use strict';
 
-const root = document.querySelector('#largeImg');
+const largeImage = document.querySelector('#largeImg');
+const galleryList = document.querySelector('.gallery__list');
 
-const onClickHandler = (e) => {
-  e.preventDefault();
+galleryList.addEventListener('click', (clickEvent) => {
+  clickEvent.preventDefault();
 
-  root.src = e.target.parentNode.href;
-};
+  const imageLink = event.target.closest('.list-item__link');
 
-[...document.querySelectorAll('li')]
-  .forEach(item => {
-    item.addEventListener('click', onClickHandler);
-  });
+  largeImage.src = imageLink;
+});
