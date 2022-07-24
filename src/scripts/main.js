@@ -3,15 +3,14 @@
 const list = document.getElementById('thumbs');
 const largeImg = document.getElementById('largeImg');
 
-document.addeListener('click', (e) => {
+document.addEventListener('click', (e) => {
   if (e.target.parentElement.tagName === 'A' 
     || e.target.tagName === 'A') {
-
-      e.preDefault();
+    e.preventDefault();
   }
 });
 
-list.addeListener('click', (e) => {
+list.addEventListener('click', (e) => {
   if (e.target.tagName === 'IMG') {
     largeImg.src = e.target.parentElement.href;
   }
