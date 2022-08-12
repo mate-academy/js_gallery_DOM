@@ -3,7 +3,7 @@
 const thumbs = document.getElementById('thumbs');
 const largeImg = document.getElementById('largeImg');
 
-const NewImage = (events) => {
+const onImageSelected = (events) => {
   events.preventDefault();
 
   const image = events.target.closest('.list-item__link');
@@ -11,4 +11,4 @@ const NewImage = (events) => {
   largeImg.src = image.href;
 };
 
-thumbs.addEventListener('click', NewImage);
+thumbs.addEventListener('click', onImageSelected);
