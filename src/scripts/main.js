@@ -11,7 +11,7 @@ const changeImg = () => {
   };
 
   mainImg.setAttribute(
-    'src', '/images' + newLink(event.target.getAttribute('src'))
+    'src', '/images/' + newLink(event.target.getAttribute('src'))
   );
 };
 
