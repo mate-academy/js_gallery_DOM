@@ -1,14 +1,12 @@
 'use strict';
 
-const items = document.querySelectorAll('.list-item');
+const items = document.querySelector('.gallery__list');
 const largePic = document.getElementById('largeImg');
 
-items.forEach(item => {
-  item.addEventListener('click', (e) => {
-    e.preventDefault();
+items.addEventListener('click', (e) => {
+  e.preventDefault();
 
-    const source = e.target.getAttribute('src');
+  const pic = e.target.closest('.list-item__link');
 
-    largePic.setAttribute('src', source);
-  });
+  largePic.src = pic.href;
 });
