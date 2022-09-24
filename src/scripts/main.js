@@ -4,7 +4,7 @@ const images = document.querySelector('.gallery__list');
 
 const bigImage = document.querySelector('.gallery__large-img');
 
-images.addEventListener('click', () => {
+images.addEventListener('click', (ev) => {
   event.preventDefault();
 
   if (event.target.classList.contains('list-item')) {
