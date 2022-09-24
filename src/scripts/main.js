@@ -4,12 +4,12 @@ const images = document.querySelector('.gallery__list');
 
 const bigImage = document.querySelector('.gallery__large-img');
 
-images.addEventListener('click', (ev) => {
-  ev.preventDefault();
+images.addEventListener('click', () => {
+  event.preventDefault();
 
-  if (ev.target.classList.contains('list-item')) {
+  if (event.target.classList.contains('list-item')) {
     return;
   }
 
-  bigImage.src = ev.target.closest('.list-item__link').href;
+  bigImage.src = event.target.closest('.list-item__link').href;
 });
