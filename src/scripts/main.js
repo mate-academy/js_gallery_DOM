@@ -6,9 +6,15 @@ const galleryList = document.querySelector('.gallery__list');
 galleryList.addEventListener('click', (myEvent) => {
   myEvent.preventDefault();
 
-  const imgLink = myEvent.target.closest('.list-item__link');
+  const img = myEvent.target.closest('.list-item__link');
 
-  const imgUrl = imgLink.getAttribute('href');
+  // but working without this, do I need to add it?
+  if (!galleryList.contains(img)) {
+    return;
+  }
+  //
+
+  const imgUrl = img.getAttribute('href');
 
   mainImg.setAttribute('src', imgUrl);
 });
