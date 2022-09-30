@@ -8,7 +8,7 @@ const replaceImg = (event) => {
   event.preventDefault();
 
   if (event.target.src) {
-    largeImg.src = event.target.src;
+    largeImg.src = event.target.closest('a').href;
   }
 };
 
