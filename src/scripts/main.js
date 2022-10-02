@@ -4,6 +4,8 @@ const largeImg = document.getElementById('largeImg');
 const thumbs = document.getElementById('thumbs');
 
 thumbs.addEventListener('click', e => {
+  e.preventDefault();
+
   const thumbnail = e.target.closest('a');
 
   if (!thumbnail) {
@@ -11,7 +13,6 @@ thumbs.addEventListener('click', e => {
   }
 
   showThumbnail(thumbnail.href, thumbnail.title);
-  e.preventDefault();
 });
 
 function showThumbnail(href, title) {
