@@ -1,10 +1,11 @@
 'use strict';
 
-const thumbsLinks = [...document.querySelector('#thumbs')
-  .querySelectorAll('a')];
+const thumbs = document.querySelector('#thumbs');
 
-thumbsLinks.forEach(a => a.addEventListener('click', (eventt, target) => {
-  eventt.preventDefault();
+thumbs.addEventListener('click', (e) => {
+  if (e.target.classList.contains('gallery__img')) {
+    e.preventDefault();
 
-  document.querySelector('#largeImg').src = eventt.path[1].href;
-}));
+    document.querySelector('#largeImg').src = e.path[1].href;
+  }
+});
