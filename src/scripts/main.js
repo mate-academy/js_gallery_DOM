@@ -6,5 +6,5 @@ document.querySelector('.gallery__list')
   .addEventListener('click', (clickOnImg) => {
     clickOnImg.preventDefault();
 
-    bigPicture.src = clickOnImg.target.parentElement.href;
+    bigPicture.src = clickOnImg.target.closest('a').href;
   });
