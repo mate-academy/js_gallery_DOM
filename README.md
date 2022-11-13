@@ -1,5 +1,5 @@
 1. Replace `<your_account>` with your Github username in the link
-    - [DEMO LINK](https://<your_account>.github.io/js_gallery_DOM/)
+    - [DEMO LINK](https://Khabailiuk.github.io/js_gallery_DOM/)
 2. Follow [this instructions](https://mate-academy.github.io/layout_task-guideline/)
     - Run `npm run test` command to test your code;
     - Run `npm run test:only -- -n` to run fast test ignoring linter;
@@ -19,4 +19,4 @@ Create an image gallery where the main image changes by the click on a thumbnail
 - You must only modify the file `src/scripts/main.js`.
 
 ### Gif of result
-![Gif example](./src/images/example.gif)
+![Gif example](./src/images/exnpmample.gif)
