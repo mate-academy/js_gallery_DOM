@@ -5,6 +5,9 @@ const largeImg = document.querySelector('#largeImg');
 
 galleryList.addEventListener('click', (even) => {
   even.preventDefault();
-  largeImg.src = even.target.src;
+
+  const item = even.target.closest('.list-item__link');
+
+  largeImg.src = item.href;
 }
 );
