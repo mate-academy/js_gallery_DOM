@@ -1,15 +1,12 @@
 'use strict';
 
-const gallery = document.querySelector('.gallery');
+const largeImg = document.querySelector('#largeImg');
 const list = document.querySelector('.gallery__list');
 
 list.addEventListener('click', (events) => {
   const item = events.target;
-  const largeImg = gallery.children[0];
-  const itemCopy = item.cloneNode(true);
+  const itemLink = item.getAttribute('src');
 
   events.preventDefault();
-  largeImg.firstElementChild.remove();
-  itemCopy.className = 'gallery__large-img gallery__img';
-  largeImg.append(itemCopy);
+  largeImg.setAttribute('src', itemLink);
 });
