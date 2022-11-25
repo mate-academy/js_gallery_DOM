@@ -12,6 +12,6 @@ list.addEventListener('click', (e) => {
     const href = clickElement.href;
     const bigImage = document.getElementById('largeImg');
 
-    bigImage.src = `/images/${href.slice(href.lastIndexOf('/') + 1)}`;
+    bigImage.src = `/images\\${href.slice(href.lastIndexOf('/') + 1)}`;
   }
 });
