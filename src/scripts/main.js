@@ -3,10 +3,10 @@
 const bigImage = document.querySelector('#largeImg');
 const smallImages = document.querySelectorAll('.gallery__thumb');
 
-const callback = (event) => {
-  const item = event.target.closest('.list-item__link');
+const callback = (e) => {
+  const item = e.target.closest('.list-item__link');
 
-  event.preventDefault();
+  e.preventDefault();
 
   bigImage.src = item.href;
 };
