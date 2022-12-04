@@ -3,10 +3,10 @@
 const ul = document.querySelector('.gallery__list');
 const liImg = document.querySelector('.gallery div img');
 
-ul.addEventListener('click', (evnt) => {
-  const item = evnt.target;
+ul.addEventListener('click', (e) => {
+  const item = e.target;
 
-  evnt.preventDefault();
+  e.preventDefault();
 
   const itemParent = item.closest('.list-item');
 
