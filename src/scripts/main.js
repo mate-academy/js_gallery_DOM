@@ -1,13 +1,13 @@
-/* eslint-disable no-shadow */
+
 'use strict';
 
 const mainImage = document.getElementById('largeImg');
 const additionalImage = document.getElementById('thumbs');
 
-additionalImage.addEventListener('click', (event) => {
-  event.preventDefault();
+additionalImage.addEventListener('click', e => {
+  e.preventDefault();
 
-  const item = event.target.closest('.list-item__link');
+  const item = e.target.closest('.list-item__link');
 
   if (!item) {
     return;
