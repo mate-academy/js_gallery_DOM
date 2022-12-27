@@ -8,5 +8,5 @@ list.addEventListener('click', e => {
 
   e.preventDefault();
 
-  largeImg.setAttribute('src', item.firstElementChild.getAttribute('href'));
+  largeImg.setAttribute('src', item.firstElementChild.href);
 });
