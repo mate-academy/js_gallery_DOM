@@ -4,7 +4,7 @@ const ul = document.querySelector('ul');
 const img = document.querySelector('#largeImg');
 const eventName = 'click';
 
-const func = (ev) => {
+const handleClick = (ev) => {
   ev.preventDefault();
 
   if (ev.target.tagName === 'IMG') {
@@ -13,4 +13,4 @@ const func = (ev) => {
   }
 };
 
-ul.addEventListener(eventName, func);
+ul.addEventListener(eventName, handleClick);
