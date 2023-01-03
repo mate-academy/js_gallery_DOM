@@ -1,5 +1,5 @@
 1. Replace `<your_account>` with your Github username in the link
-    - [DEMO LINK](https://<your_account>.github.io/js_gallery_DOM/)
+    - [DEMO LINK](https://yevhenii-stanchenko.github.io/js_gallery_DOM/)
 2. Follow [this instructions](https://mate-academy.github.io/layout_task-guideline/)
     - Run `npm run test` command to test your code;
     - Run `npm run test:only -- -n` to run fast test ignoring linter;
@@ -20,3 +20,16 @@ Create an image gallery where the main image changes by the click on a thumbnail
 
 ### Gif of result
 ![Gif example](./src/images/example.gif)
+Создайте галерею изображений, в которой основное изображение меняется при нажатии на миниатюру.
+
+**Требования:**
+- Щелчок может быть как на маленьком изображении `img`, так и на `a` за его пределами. `событие.цель`
+  будет, соответственно, либо `img`, либо `a`.
+
+**Примечания:**
+
+- Используйте делегирование событий.
+- Вы должны изменить только файл `src/scripts/main.js`.
+
+### GIF результата
+![Пример GIF](./src/images/example.gif)
