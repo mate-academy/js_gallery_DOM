@@ -8,5 +8,9 @@ list.addEventListener('click', (e) => {
 
   e.preventDefault();
 
+  if (!item || !list.contains(item)) {
+    return;
+  }
+
   blockImg.src = item.href;
 });
