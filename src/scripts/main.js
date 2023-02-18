@@ -12,9 +12,5 @@ list.addEventListener('click', (e) => {
   + picture.getAttribute('src').toString().split('-').slice(0, -1).join('-')
   + '.png';
 
-  if (picture.classList.contains('.list-item__link')) {
-    largeImg.setAttribute('src', href);
-  }
-
   largeImg.setAttribute('src', href);
 });
