@@ -8,7 +8,7 @@ list.addEventListener('click', (e) => {
 
   e.preventDefault();
 
-  const href = 'http://localhost:8080/images'
+  const href = './images'
   + picture.getAttribute('src').toString().split('-').slice(0, -1).join('-')
   + '.png';
 
