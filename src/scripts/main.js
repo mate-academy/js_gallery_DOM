@@ -6,7 +6,7 @@ const largeImg = document.querySelector('#largeImg');
 thumbs.addEventListener('click', e => {
   e.preventDefault();
 
-  if (e.target.nodeName !== 'img') {
+  if (e.target.nodeName !== 'IMG') {
     return;
   }
 
