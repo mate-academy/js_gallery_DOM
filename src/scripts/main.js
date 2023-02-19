@@ -8,9 +8,5 @@ list.addEventListener('click', (e) => {
 
   e.preventDefault();
 
-  const href = './images'
-  + picture.getAttribute('src').toString().split('-').slice(0, -1).join('-')
-  + '.png';
-
-  largeImg.setAttribute('src', href);
+  largeImg.setAttribute('src', picture.parentElement.href);
 });
