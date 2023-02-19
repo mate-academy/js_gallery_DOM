@@ -10,11 +10,8 @@ galleryList.addEventListener('click', (e) => {
     return;
   }
 
-  showThumbnail(listItem.href, listItem.title);
   e.preventDefault();
-});
 
-function showThumbnail(href, title) {
-  largeImg.src = href;
-  largeImg.alt = title;
-}
+  largeImg.src = listItem.href;
+  largeImg.alt = listItem.title;
+});
