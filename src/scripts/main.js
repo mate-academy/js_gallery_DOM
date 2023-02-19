@@ -11,7 +11,7 @@ galleryList.addEventListener('click', (e) => {
   }
 
   showThumbnail(listItem.href, listItem.title);
-  event.preventDefault();
+  e.preventDefault();
 });
 
 function showThumbnail(href, title) {
