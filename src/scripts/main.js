@@ -3,7 +3,7 @@
 const largeImage = document.querySelector('#largeImg');
 const smalImages = document.querySelector('#thumbs');
 
-smalImages.addEventListener('click', (myEvent) => {
-  myEvent.preventDefault();
-  largeImage.src = myEvent.target.closest('a').href;
+smalImages.addEventListener('click', (eventFunc) => {
+  eventFunc.preventDefault();
+  largeImage.src = eventFunc.target.closest('a').href;
 });
