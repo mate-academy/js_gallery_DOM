@@ -4,8 +4,8 @@ const largeImage = document.querySelector('#largeImg');
 const smalImages = document.querySelectorAll('a');
 
 for (const item of smalImages) {
-  item.addEventListener('click', (eventFunc) => {
+  item.onclick = (eventFunc) => {
     eventFunc.preventDefault();
     largeImage.src = item.href;
-  });
+  };
 }
