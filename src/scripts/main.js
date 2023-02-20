@@ -1,11 +1,9 @@
 'use strict';
 
 const largeImage = document.querySelector('#largeImg');
-const smalImages = document.querySelectorAll('a');
+const smalImages = document.querySelector('#thumbs');
 
-for (const item of smalImages) {
-  item.onclick = (eventFunc) => {
-    eventFunc.preventDefault();
-    largeImage.src = item.href;
-  };
-}
+smalImages.addEventListener('click', (myEvent) => {
+  myEvent.preventDefault();
+  largeImage.src = myEvent.target.closest('a').href;
+});
