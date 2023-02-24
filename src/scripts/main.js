@@ -1,9 +1,9 @@
 'use strict';
 
-const ColectionList = document.querySelector('.gallery__list');
-const ImegLarge = document.querySelector('.gallery__large-img');
+const colectionList = document.querySelector('.gallery__list');
+const imegLarge = document.querySelector('.gallery__large-img');
 
-ColectionList.addEventListener('click', (E) => {
+colectionList.addEventListener('click', (E) => {
   const list = E.target.closest('a');
 
   if (!list) {
@@ -15,6 +15,6 @@ ColectionList.addEventListener('click', (E) => {
 });
 
 function showGalery(href, title) {
-  ImegLarge.src = href;
-  ImegLarge.alt = title;
+  imegLarge.src = href;
+  imegLarge.alt = title;
 }
