@@ -4,18 +4,15 @@
 
 const largeImg = document.getElementById('largeImg');
 
-// const srcLargeImg = largeImg.getAttribute('src');
+const imgesListItem = document.querySelector('.gallery__list');
 
-// const linksListItem = document.querySelectorAll('.list-item__link');
-const imgesListItem = document.querySelectorAll('.gallery__img');
+imgesListItem.addEventListener('click', (e) => {
+  e.preventDefault();
 
-for (const img of imgesListItem) {
-  img.addEventListener('click', (e) => {
-    e.preventDefault();
+  const currentImg = document.elementFromPoint(e.clientX, e.clientY);
 
-    const srcObject = img.getAttribute('src');
+  const srcCurrentImg = currentImg.getAttribute('src');
 
-    largeImg.setAttribute('src', srcObject);
-    largeImg.style.height = '348px';
-  });
-}
+  largeImg.setAttribute('src', srcCurrentImg);
+  largeImg.style.height = '348px';
+});
