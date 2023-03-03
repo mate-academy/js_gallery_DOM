@@ -4,6 +4,8 @@
 const list = document.getElementById('thumbs');
 
 function showImage(event) {
+  event.preventDefault();
+
   const targetLink = event.target.closest('.list-item__link');
   const largeImage = document.querySelector('#largeImg');
 
@@ -12,7 +14,6 @@ function showImage(event) {
   }
 
   largeImage.src = targetLink.href;
-  event.preventDefault();
 };
 
 list.addEventListener('click', showImage);
