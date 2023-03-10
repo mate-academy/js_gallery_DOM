@@ -3,8 +3,8 @@
 const thumbs = document.getElementById('thumbs');
 const largeImg = document.getElementById('largeImg');
 
-thumbs.onclick = (image) => {
-  const thumbItem = image.target.closest('a');
+thumbs.onclick = (evnt) => {
+  const thumbItem = evnt.target.closest('a');
 
   if (!thumbItem) {
     return;
@@ -12,5 +12,5 @@ thumbs.onclick = (image) => {
 
   largeImg.src = thumbItem.href;
   largeImg.alt = thumbItem.title;
-  image.preventDefault();
+  evnt.preventDefault();
 };
