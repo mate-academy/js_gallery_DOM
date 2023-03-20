@@ -3,10 +3,11 @@
 const gallery = document.querySelector('.gallery__list');
 const mainPhoto = document.querySelector('#largeImg');
 
-gallery.addEventListener('click', (eve) => {
-  const link = eve.target.closest('list-item__link');
-  const item = eve.target.closest('.gallery__img');
+// eslint-disable-next-line
+gallery.addEventListener('click', (event) => {
+  event.preventDefault();
 
-  eve.preventDefault(link);
-  mainPhoto.src = item.src;
+  const item = event.target.closest('.list-item__link').href;
+
+  mainPhoto.src = item;
 });
