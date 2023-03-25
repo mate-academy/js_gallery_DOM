@@ -3,10 +3,10 @@
 const largeImg = document.querySelector('#largeImg');
 const images = document.querySelector('#thumbs');
 
-images.addEventListener('click', i => {
-  i.preventDefault();
+images.addEventListener('click', e => {
+  e.preventDefault();
 
-  const link = i.target.closest('.list-item__link');
+  const link = e.target.closest('.list-item__link');
 
   largeImg.src = link.href;
 });
