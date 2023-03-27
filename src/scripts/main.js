@@ -3,10 +3,10 @@
 const largeImage = document.querySelector('#largeImg');
 const galleryList = document.querySelector('.gallery__list');
 
-galleryList.addEventListener('click', function(el) {
-  el.preventDefault();
+galleryList.addEventListener('click', clickedEvent => {
+  clickedEvent.preventDefault();
 
-  const item = el.target.closest('.list-item__link');
+  const item = clickedEvent.target.closest('.list-item__link');
 
   if (!item) {
     return;
