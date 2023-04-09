@@ -3,10 +3,10 @@
 const thumbs = document.getElementById('thumbs');
 const largeImg = document.getElementById('largeImg');
 
-thumbs.addEventListener('click', (event) => {
-  event.preventDefault();
+thumbs.addEventListener('click', (item) => {
+  item.preventDefault();
 
-  const target = event.target;
+  const target = item.target;
 
   if (target.tagName === 'IMG') {
     largeImg.src = target.parentNode.href;
