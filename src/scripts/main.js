@@ -6,13 +6,10 @@ thumbGallery.forEach(item =>
   item.addEventListener('click', (e) => {
     e.preventDefault();
     
-    const urlImage = 
-    e.target.closest('.list-item__link').href
-    .split('http://localhost:8080')
-    .join('');
-
+    const urlImage = `/images${e.target.closest('.list-item__link').href
+    .split('images')[1]}`;
+    
     const largeImg = document.querySelector('#largeImg');
-
     largeImg.setAttribute('src', urlImage);
   })
 );
