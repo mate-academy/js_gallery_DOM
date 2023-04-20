@@ -1,27 +1,14 @@
 'use strict';
 
-function extractImageName(link) {
-  return link.split('/')
-    .slice(3)
-    .join('')
-    .split('-')
-    .slice(0, 2)
-    .join('-');
-}
-
 const largeImage = document.getElementById('largeImg');
-
 const thumbImages = document.querySelectorAll('.gallery__thumb');
 
-const thumbLinks = document.querySelectorAll('.list-item__link');
+thumbImages.forEach(thumbImage => {
+  thumbImage.addEventListener('click', currEvent => {
+    currEvent.preventDefault();
 
-thumbLinks.forEach(thumbLink => {
-  thumbLink.href = '#largeImg';
+    const newImageSrc = thumbImage.parentNode.href;
+
+    largeImage.src = newImageSrc;
+  });
 });
-
-[...thumbImages]
-  .forEach(thumbImage => thumbImage.addEventListener('click', () => {
-    const imageName = extractImageName(thumbImage.src);
-
-    largeImage.src = `/images/${imageName}.png`;
-  }));
