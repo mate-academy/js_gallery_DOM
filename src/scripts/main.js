@@ -15,8 +15,8 @@ const thumbImages = document.querySelectorAll('.gallery__thumb');
 
 const thumbLinks = document.querySelectorAll('.list-item__link');
 
-thumbLinks.forEach(link => {
-  link.href = '#largeImg';
+thumbLinks.forEach(thumbLink => {
+  thumbLink.href = '#largeImg';
 });
 
 [...thumbImages]
