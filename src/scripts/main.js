@@ -1,16 +1,17 @@
 'use strict';
 
-const pictures = document.querySelector('.gallery__list');
-const largePicture = document.querySelector('#largeImg');
+const images = document.querySelector('.gallery__list');
 
-pictures.addEventListener('click', (e) => {
+const largeImg = document.querySelector('#largeImg');
+
+images.addEventListener('click', (e) => {
   e.preventDefault();
 
-  const item = e.target.closest('.list-item');
+  const item = e.target.closest('.list-item__link');
 
-  if (!item || !pictures.contains(item)) {
+  if (!item || !images.contains(item)) {
     return;
   }
 
-  largePicture.src = item.querySelector('.list-item__link').href;
+  largeImg.src = item.href;
 });
