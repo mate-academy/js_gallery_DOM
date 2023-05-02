@@ -8,7 +8,6 @@ list.addEventListener('click', e => {
 
   if (item) {
     e.preventDefault();
+    centralFrame.src = item.href;
   }
-
-  centralFrame.src = item.href;
 });
