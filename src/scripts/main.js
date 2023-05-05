@@ -7,13 +7,11 @@ const largeImg = galleryBlock.querySelector('#largeImg');
 galleryBlock.addEventListener('click', e => {
   e.preventDefault();
 
-  const a = e.target.closest('a');
+  const thumbnailLink = e.target.closest('.list-item__link');
 
-  if (!a) {
+  if (!thumbnailLink) {
     return;
   }
 
-  const img = a.href;
-
-  largeImg.src = img;
+  largeImg.src = thumbnailLink.href;
 });
