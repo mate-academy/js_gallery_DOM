@@ -1,6 +1,7 @@
 'use strict';
 
 const thumbs = document.getElementById('thumbs');
+const largeImg = document.getElementById('largeImg');
 
 thumbs.addEventListener('click', function(e) {
   e.preventDefault();
@@ -8,8 +9,9 @@ thumbs.addEventListener('click', function(e) {
   const target = e.target;
 
   if (target.tagName === 'IMG' || target.tagName === 'A') {
-    const largeImg = document.getElementById('largeImg');
-    const newSrc = target.tagName === 'IMG' ? target.src : target.href;
+    const newSrc = target.tagName === 'IMG'
+      ? target.parentNode.href
+      : target.href;
 
     largeImg.src = newSrc;
   }
