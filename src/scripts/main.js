@@ -6,6 +6,6 @@ const list = document.querySelector('.gallery__list');
 list.addEventListener('click', (e) => {
   const item = e.target.closest('.list-item__link');
 
-  largeImg.src = item.firstElementChild.src;
+  largeImg.src = item.href;
   e.preventDefault();
 });
