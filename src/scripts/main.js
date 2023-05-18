@@ -16,7 +16,7 @@ for (const listItem of listItems) {
 
     largeImg.id = mainImage.id;
 
-    largeImg.src = './images'
+    largeImg.src = './images/'
       + littleImgSrc.substring(0, littleImgSrc.lastIndexOf('-'))
       + '.png';
     largeImg.alt = mainImage.alt;
