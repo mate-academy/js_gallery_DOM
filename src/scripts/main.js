@@ -3,10 +3,10 @@
 const list = document.querySelector('#thumbs');
 const img = document.querySelector('#largeImg');
 
-list.addEventListener('click', (c) => {
-  c.preventDefault();
+list.addEventListener('click', (e) => {
+  e.preventDefault();
 
-  const closest = c.target.closest('.list-item__link');
+  const closest = e.target.closest('.list-item__link');
 
   if (!closest || list.contains(closest)) {
     img.src = closest.href;
