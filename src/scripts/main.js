@@ -1,28 +1,22 @@
 'use strict';
 
-const mainImageBlock = document.querySelector('.gallery div');
-const mainImage = mainImageBlock.firstElementChild;
+const mainImage = document.querySelector('#largeImg');
 const listItems
-  = document.querySelectorAll('.gallery__list .list-item');
+  = document.querySelector('#thumbs');
 
-for (const listItem of listItems) {
-  const imgListItem = listItem.querySelector('.list-item__link .gallery__img');
+// eslint-disable-next-line no-shadow
+listItems.addEventListener('click', (event) => {
+  event.preventDefault();
 
-  listItem.addEventListener('click', (EVENT) => {
-    EVENT.preventDefault();
+  const element = event.target;
 
-    const littleImgSrc = imgListItem.getAttribute('src');
-    const largeImg = document.createElement('img');
+  if (!element.classList.contains('gallery__img')) {
+    return;
+  }
 
-    largeImg.id = mainImage.id;
+  const littleImgSrc = element.getAttribute('src');
 
-    largeImg.src = './images/'
-      + littleImgSrc.substring(0, littleImgSrc.lastIndexOf('-'))
-      + '.png';
-    largeImg.alt = mainImage.alt;
-    largeImg.className = mainImage.className;
-
-    mainImageBlock.firstElementChild.remove();
-    mainImageBlock.append(largeImg);
-  });
-}
+  mainImage.src = './images/'
+    + littleImgSrc.substring(0, littleImgSrc.lastIndexOf('-'))
+    + '.png';
+});
