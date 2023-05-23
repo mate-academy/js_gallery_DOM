@@ -6,7 +6,7 @@ const mainPicture = document.querySelector('#largeImg');
 listOfPictures.addEventListener('click', (picture) => {
   picture.preventDefault();
 
-  const item = picture.target.closest('.list-item__link');
+  const link = picture.target.closest('.list-item__link');
 
-  mainPicture.src = item.href;
+  mainPicture.src = link.href;
 });
