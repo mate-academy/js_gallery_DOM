@@ -1,14 +1,14 @@
 'use strict';
 
 const pictures = document.querySelectorAll('.list-item__link');
-const valide = document.getElementById('largeImg');
+const mainImage = document.getElementById('largeImg');
 
-for (const picture of pictures) {
-  picture.addEventListener('click', (even) => {
-    even.preventDefault();
+pictures.forEach(picture => {
+  picture.addEventListener('click', (e) => {
+    e.preventDefault();
 
-    const item = even.target.closest('.list-item__link');
+    const item = e.target.closest('.list-item__link');
 
-    valide.src = item.children[0].src;
+    mainImage.src = item.children[0].src;
   });
-}
+});
