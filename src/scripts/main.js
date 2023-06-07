@@ -8,5 +8,7 @@ thumbs.addEventListener('click', (ev) => {
 
   const item = ev.target;
 
-  frame.src = item.parentElement.href;
+  if (item.tagName === 'IMG') {
+    frame.src = item.parentElement.href;
+  }
 });
