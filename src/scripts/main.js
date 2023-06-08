@@ -1,12 +1,17 @@
 'use strict';
 
-const list = document.getElementById('thumbs');
-const bigItem = document.getElementById('largeImg');
+const gallery = document.querySelector('.gallery');
+const bigImage = document.querySelector('.gallery__large-img');
 
-list.addEventListener('click', (event) => {
-  event.preventDefault();
+gallery.addEventListener('click', (clickEvent) => {
+  clickEvent.preventDefault();
 
-  const currentItemSrc = event.target.src;
+  if (clickEvent.target.tagName === 'IMG'
+    || clickEvent.target.tagName === 'A') {
+    const newImgUrl = clickEvent.target.closest(
+      'a').getAttribute('href');
 
-  bigItem.src = currentItemSrc;
-});
+    bigImage.src = newImgUrl;
+  }
+}
+);
