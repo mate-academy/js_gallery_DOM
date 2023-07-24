@@ -7,10 +7,10 @@ smallImages.forEach(image => {
   image.addEventListener('click', (element) => {
     element.preventDefault();
 
-    if (element.target.tagName === 'IMG') {
+    if (element.target.closest('a')) {
       bigImage.src = element.target.src;
-    } else if (element.target.tagName === 'A') {
-      bigImage.src = element.target.firstChildElement.src;
+    } else {
+      bigImage.src = element.target.firstElementChild.src;
     }
   });
 });
