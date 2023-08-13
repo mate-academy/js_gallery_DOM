@@ -16,10 +16,10 @@ thumbs.addEventListener('click', ev => {
     target = target.children[0];
   }
 
-  const srcParts = target.src.replace('-thumb', '')
-    .split('.')[0].split('/');
+  const srcParts = target.src.replace('-thumb', '').split('landscape');
+  const imageTitle = `landscape${srcParts[1].split('.')[0]}`;
 
-  const src = `${srcParts[0]}//${srcParts[2]}/images/${srcParts[3]}.png`;
-
-  largeImg.src = src;
+  largeImg.src = srcParts[0] === 'http://localhost:8080/'
+    ? `${srcParts[0]}images/${imageTitle}.png`
+    : `./images/${imageTitle}.png`;
 });
