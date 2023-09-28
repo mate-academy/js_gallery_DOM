@@ -1,7 +1,7 @@
 'use strict';
 
 const largeImg = document.getElementById('largeImg');
-const thumbnailList = document.getAnimations('thumbs');
+const thumbnailList = document.getElementById('thumbs');
 
 thumbnailList.addEventListener('click', function(clickEvent) {
   if (clickEvent.target.tagName === 'A' || clickEvent.target === 'IMG') {
