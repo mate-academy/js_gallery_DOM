@@ -4,15 +4,16 @@ const largeImg = document.getElementById('largeImg');
 const thumbnailList = document.getElementById('thumbs');
 
 thumbnailList.addEventListener('click', function(clickEvent) {
-  if (clickEvent.target.tagName === 'A' || clickEvent.target === 'IMG') {
-    clickEvent.preventDefault();
+  clickEvent.preventDefault();
 
-    const anchorElement = clickEvent.target.tagName === 'A'
+  const clickedElement = clickEvent.target.tagName === 'A'
+    ? clickEvent.target : clickEvent.target.closest('a');
 
-      ? clickEvent.target : clickEvent.target.parentElement;
+  if (clickedElement) {
+    const newImgUrl = clickedElement.getAttribute('href');
+    const newImgAlt = clickedElement.getAttribute('title');
 
-    const newImgUrl = anchorElement.target.getAttribute('href');
-
-    largeImg.setAttribute('src', newImgUrl);
+    largeImg.src = newImgUrl; // Set the src attribute of the main image
+    largeImg.alt = newImgAlt; // Set the alt attribute of the main image
   }
 });
