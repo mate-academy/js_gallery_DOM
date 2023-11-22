@@ -20,9 +20,5 @@ function showBigImg(elem) {
 
   const href = img.getAttribute('href');
 
-  if (largeImg) {
-    largeImg.src = '';
-  }
-
   largeImg.src = href;
 }
