@@ -13,8 +13,6 @@ list.onclick = function(eventt) {
   eventt.preventDefault();
 
   showBigImg(target);
-
-  // return false;
 };
 
 function showBigImg(elem) {
