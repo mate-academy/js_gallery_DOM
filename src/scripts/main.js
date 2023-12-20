@@ -12,7 +12,7 @@ list.forEach(item => item.querySelector('.list-item__link')
     if (current.tagName === 'A') {
       const link = current.getAttribute('href');
 
-      largeImg.setAttribute('src', `.${link}`);
+      largeImg.setAttribute('src', `./${link}`);
     }
   }),
 );
