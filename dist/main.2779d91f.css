@@ -1,0 +1,2 @@
+body{display:flex;justify-content:center;align-items:center;min-height:100vh}li{list-style-type:none}.gallery{display:flex;flex-direction:column;align-items:center}.gallery__large-img{width:450px}.gallery__list{margin-top:0;display:flex;padding-left:0}.gallery__img{padding:3px;border:1px solid #d3d3d3;border-radius:4px}.gallery__thumb{width:83px}
+/*# sourceMappingURL=main.2779d91f.css.map */
