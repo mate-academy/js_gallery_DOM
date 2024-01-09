@@ -1,0 +1,132 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 0,
+    "pending": 0,
+    "failures": 2,
+    "start": "2024-01-09T09:32:43.478Z",
+    "end": "2024-01-09T09:32:52.782Z",
+    "duration": 9201,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "13cb3a02-05e0-461a-ac2b-85d745ea6b26",
+      "title": "",
+      "fullFile": "cypress/integration/galleryDom.spec.js",
+      "file": "cypress/integration/galleryDom.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fafeaef1-937b-4699-a12b-bce8f6de2fd3",
+          "title": "Gallery application",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "can click on a small `img` image",
+              "fullTitle": "Gallery application can click on a small `img` image",
+              "timedOut": null,
+              "duration": 4636,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "for (let i = 0; i < images.length; i++) {\n  cy.get(`li:nth-child(${i + 1})`).click();\n  cy.get('@largeImg').should('have.attr', 'src', `${url}${images[i]}`);\n}\n;",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<img#largeImg.gallery__large-img.gallery__img>' to have attribute 'src' with the value 'http://localhost:8080/images/landscape-first.png', but the value was '/images/landscape-first.png'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<img#largeImg.gallery__large-img.gallery__img>' to have attribute 'src' with the value 'http://localhost:8080/images/landscape-first.png', but the value was '/images/landscape-first.png'\n    at Context.eval (http://localhost:8080/__cypress/tests?p=cypress\\integration\\galleryDom.spec.js:109:27)",
+                "diff": "- '/images/landscape-first.png'\n+ 'http://localhost:8080/images/landscape-first.png'\n"
+              },
+              "uuid": "2f082a81-8f3e-45de-a108-8bb290a5f488",
+              "parentUUID": "fafeaef1-937b-4699-a12b-bce8f6de2fd3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "can click on `a` outside of image",
+              "fullTitle": "Gallery application can click on `a` outside of image",
+              "timedOut": null,
+              "duration": 4565,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "for (let i = 0; i < images.length; i++) {\n  cy.get(`[title=\"Image ${i + 1}\"]`).click();\n  cy.get('@largeImg').should('have.attr', 'src', `${url}${images[i]}`);\n}\n;",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<img#largeImg.gallery__large-img.gallery__img>' to have attribute 'src' with the value 'http://localhost:8080/images/landscape-first.png', but the value was '/images/landscape-first.png'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<img#largeImg.gallery__large-img.gallery__img>' to have attribute 'src' with the value 'http://localhost:8080/images/landscape-first.png', but the value was '/images/landscape-first.png'\n    at Context.eval (http://localhost:8080/__cypress/tests?p=cypress\\integration\\galleryDom.spec.js:117:27)",
+                "diff": "- '/images/landscape-first.png'\n+ 'http://localhost:8080/images/landscape-first.png'\n"
+              },
+              "uuid": "3dabcb7e-800e-426b-880c-32a5567db84a",
+              "parentUUID": "fafeaef1-937b-4699-a12b-bce8f6de2fd3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "2f082a81-8f3e-45de-a108-8bb290a5f488",
+            "3dabcb7e-800e-426b-880c-32a5567db84a"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 9201,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "raw_reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
