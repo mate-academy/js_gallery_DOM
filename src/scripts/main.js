@@ -6,11 +6,13 @@ const img = document.querySelector('.gallery__img');
 list.addEventListener('click', e => {
   e.preventDefault();
 
-  const formatBigImage = e.target.src
-    .replace(/landscape/g, 'images/landscape')
-    .split('-')
-    .slice(0, e.target.src.split('-').length - 1)
-    .join('-') + '.png';
+  const item = e.target.closest('.list-item');
 
-  img.src = formatBigImage;
+  if (!item || !list.contains(item)) {
+    return;
+  }
+
+  const link = item.querySelector('.list-item__link');
+
+  img.src = link.href;
 });
