@@ -1,7 +1,7 @@
 'use strict';
 
 const list = document.querySelector('.gallery__list');
-const img = document.querySelector('.gallery__img');
+const bigImg = document.querySelector('.gallery__img');
 
 list.addEventListener('click', e => {
   e.preventDefault();
@@ -14,5 +14,5 @@ list.addEventListener('click', e => {
 
   const link = item.querySelector('.list-item__link');
 
-  img.src = link.href;
+  bigImg.src = link.href;
 });
