@@ -12,7 +12,7 @@ items.addEventListener('click', (clickEvent) => {
     return;
   }
 
-  const imgWay = '.' + item.attributes.href.nodeValue;
+  const imgWay = './' + item.attributes.href.nodeValue;
 
   bigImage.attributes.src.nodeValue = imgWay;
 });
