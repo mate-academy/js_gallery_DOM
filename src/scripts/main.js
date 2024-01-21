@@ -1,10 +1,10 @@
+/* eslint-disable no-shadow */
 'use strict';
 
 const largeImg = document.getElementById('largeImg');
 
 const list = document.getElementById('thumbs');
 
-// eslint-disable-next-line no-shadow
 list.addEventListener('click', (event) => {
   event.preventDefault();
 
