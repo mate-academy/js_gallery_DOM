@@ -1,20 +1,18 @@
 'use strict';
 
+const gallery = document.querySelector('.gallery');
 const largeImage = document.querySelector('.gallery__large-img');
-const thumbnails = document.querySelectorAll('.gallery__thumb');
 
 function changeImage(imageEvent) {
-  let href = imageEvent.target.href;
-
-  if (!href) {
-    href = imageEvent.target.parentElement.href;
-  }
+  const element = imageEvent.target;
 
   imageEvent.preventDefault();
-  largeImage.src = href;
+
+  if (element.className === 'gallery__img gallery__thumb') {
+    largeImage.src = element.parentElement.href;
+  } else if (element.className === 'list-item__link') {
+    largeImage.src = element.href;
+  }
 }
 
-thumbnails.forEach((thumbnail) => {
-  thumbnail.addEventListener('click', changeImage);
-  thumbnail.parentElement.addEventListener('click', changeImage);
-});
+gallery.addEventListener('click', changeImage);
