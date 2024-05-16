@@ -12,12 +12,7 @@ list.addEventListener('click', (e) => {
 
   e.preventDefault();
 
-  const mainImgSrc = mainImg.src;
   const newImgSrc = link.href;
-
-  if (mainImgSrc === newImgSrc) {
-    return;
-  }
 
   mainImg.src = newImgSrc;
 });
