@@ -3,19 +3,20 @@
 window.addEventListener('DOMContentLoaded', setApp);
 
 function setApp() {
-  const gallery = document.querySelector('.gallery');
+  const galleryList = document.querySelector('.gallery');
+
   const clickImgHandler = (e) => {
-    const link = e.target.closest('.list-item__link');
+    e.preventDefault();
 
-    if (link) {
-      e.preventDefault();
+    const largeImg = document.getElementById('largeImg');
+    const link = e.target.closest('.list-item__link').href;
 
-      const largeImg = document.getElementById('largeImg');
-      const newSrc = link.getAttribute('href');
-
-      largeImg.src = newSrc;
+    if (!link) {
+      return;
     }
+
+    largeImg.src = link;
   };
 
-  gallery.addEventListener('click', clickImgHandler);
+  galleryList.addEventListener('click', clickImgHandler);
 }
