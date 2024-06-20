@@ -1,16 +1,20 @@
 'use strict';
 
 const mainPhoto = document.querySelector('#largeImg');
-const imagesContainers = document.querySelectorAll('.list-item');
+const gallery = document.querySelector('.gallery__list');
 
-imagesContainers.forEach((el) => {
-  el.addEventListener('click', (e) => {
+if (gallery) {
+  gallery.addEventListener('click', (e) => {
     e.preventDefault();
 
-    const imageSrc = e.target.parentElement.href;
+    const listItem = e.target.closest('.list-item');
 
-    if (mainPhoto) {
-      mainPhoto.src = imageSrc;
+    if (listItem) {
+      const imageSrc = listItem.querySelector('a').href;
+
+      if (mainPhoto) {
+        mainPhoto.src = imageSrc;
+      }
     }
   });
-});
+}
