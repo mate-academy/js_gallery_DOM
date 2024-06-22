@@ -18,5 +18,5 @@ list.addEventListener('click', (e) => {
 function getReference(str) {
   const idx = str.lastIndexOf('-');
 
-  return `./images${str.slice(0, idx)}.png`;
+  return `./images/${str.slice(0, idx)}.png`;
 }
