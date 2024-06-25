@@ -8,13 +8,13 @@ const smallImg = gallery.querySelector('.gallery__list');
 smallImg.addEventListener('click', (event) => {
   event.preventDefault();
 
-  const link = event.target.closest('.list-item__link');
+  const img = event.target.closest('.list-item__link');
 
-  if (!link) {
+  if (!img) {
     return;
   }
 
-  const linkHref = link.getAttribute('href');
+  const link = img.closest('a');
 
-  largeImg.setAttribute('src', linkHref);
+  largeImg.src = link.href;
 });
