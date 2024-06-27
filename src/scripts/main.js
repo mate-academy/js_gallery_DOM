@@ -11,5 +11,5 @@ gallery.addEventListener('click', (e) => {
   const link = e.target.closest('.list-item__link');
   const imgLink = link.getAttribute('href');
 
-  largeImg.setAttribute('src', `${baseURL}${imgLink}`);
+  largeImg.setAttribute('src', `${baseURL}/${imgLink}`);
 });
