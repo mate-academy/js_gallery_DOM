@@ -9,11 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let target = eventClick.target;
 
-    if (target.tagName === 'img') {
+    if (target.tagName === 'IMG') {
       target = target.parentElement;
     }
 
-    if (target.tagName === 'a') {
+    if (target.tagName === 'A') {
       const newSrc = target.getAttribute('href');
 
       largeImg.setAttribute('src', newSrc);
