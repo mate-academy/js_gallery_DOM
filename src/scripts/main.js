@@ -13,6 +13,6 @@ Array.from(sideImg)
 
       Array.from(sideImg)
         .slice(0, 1)[0]
-        .setAttribute('src', `/images/landscape-${currentImg}.png`);
+        .setAttribute('src', `images/landscape-${currentImg}.png`);
     });
   });
