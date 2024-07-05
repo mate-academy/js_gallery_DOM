@@ -8,10 +8,11 @@ gallery.addEventListener('click', (e) => {
   if (e.target.classList.contains('gallery__thumb')) {
     const thumbPath = new URL(e.target.src);
     const bigImage = thumbPath.pathname
+      .split('/')
+      .at(-1)
       .split('-')
       .slice(0, 2)
-      .join('-')
-      .slice(1);
+      .join('-');
 
     const galleryImage = gallery.firstElementChild.firstElementChild;
 
