@@ -8,9 +8,8 @@ images.forEach((item) => {
 
     if (e.target.tagName === 'IMG' || e.target.tagName === 'A') {
       const src = item.getAttribute('href');
-      const absoluteSrc = new URL(src, window.location.origin).href;
 
-      document.getElementById('largeImg').setAttribute('src', `${absoluteSrc}`);
+      document.getElementById('largeImg').setAttribute('src', `${src}`);
     }
   });
 });
