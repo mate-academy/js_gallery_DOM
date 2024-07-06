@@ -3,16 +3,8 @@
 const galleryCont = document.querySelector('.gallery__list');
 const galleryImgLarge = document.querySelector('#largeImg');
 
-// clear default action on a tag
-document.querySelectorAll('.list-item__link').forEach((link) => {
-  link.setAttribute('onClick', 'event.preventDefault()');
-});
+galleryCont.addEventListened('click', (event) => {
+  event.preventDefault();
 
-galleryCont?.addEventListener('click', function (eventClick) {
-  const imgTarget = eventClick.target.getAttribute('src');
-
-  galleryImgLarge?.setAttribute(
-    'src',
-    location.origin + '/images' + imgTarget.split('-thumb')[0] + '.png',
-  );
+  galleryImgLarge.src = event.target.closest('.list-item__link').href;
 });
