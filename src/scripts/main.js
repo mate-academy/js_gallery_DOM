@@ -1,10 +1,10 @@
 'use strict';
 
-const galleryCont = document.querySelector('.gallery__list');
+const galleryCont = document.querySelector('#thumbs');
 const galleryImgLarge = document.querySelector('#largeImg');
 
-galleryCont.addEventListened('click', (event) => {
-  event.preventDefault();
+galleryCont.addEventListener('click', (ev) => {
+  ev.preventDefault();
 
-  galleryImgLarge.src = event.target.closest('.list-item__link').href;
+  galleryImgLarge.src = ev.target.closest('.list-item__link').href;
 });
