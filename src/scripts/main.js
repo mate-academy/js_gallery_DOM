@@ -7,5 +7,5 @@ images.addEventListener('click', (e) => {
 
   document
     .getElementById('largeImg')
-    .setAttribute('src', `${e.target.closest('.list-item__link')}`);
+    .setAttribute('src', `${e.target.closest('.list-item__link').href}`);
 });
