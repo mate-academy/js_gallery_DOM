@@ -1,15 +1,11 @@
 'use strict';
 
-const images = document.querySelectorAll('a');
+const images = document.querySelector('ul');
 
-images.forEach((item) => {
-  item.addEventListener('click', (e) => {
-    e.preventDefault();
+images.addEventListener('click', (e) => {
+  e.preventDefault();
 
-    if (e.target.tagName === 'IMG' || e.target.tagName === 'A') {
-      const src = item.getAttribute('href');
-
-      document.getElementById('largeImg').setAttribute('src', `${src}`);
-    }
-  });
+  document
+    .getElementById('largeImg')
+    .setAttribute('src', `${e.target.closest('.list-item__link')}`);
 });
