@@ -6,7 +6,7 @@ const galeryImg = document.querySelector('ul');
 galeryImg.addEventListener('click', (e) => {
   e.preventDefault();
 
-  const newLargeImg = e.target.closest('.gallery__thumb');
+  const newLargeImg = e.target.closest('.list-item__link');
 
-  largeImg.setAttribute('src', newLargeImg.getAttribute('src'));
+  largeImg.setAttribute('src', newLargeImg);
 });
