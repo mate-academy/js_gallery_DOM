@@ -6,10 +6,7 @@ const thumbs = document.querySelector('#thumbs');
 thumbs.addEventListener('click', (evt) => {
   evt.preventDefault();
 
-  const href = evt.target.closest('a').getAttribute('href');
-  const domain = window.location.origin;
+  const link = evt.target.closest('a');
 
-  if (href) {
-    largeImg.src = domain + href;
-  }
+  largeImg.src = link;
 });
