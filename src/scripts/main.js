@@ -3,12 +3,12 @@
 const mainImg = document.getElementById('largeImg');
 const gallery = document.querySelector('.gallery__list');
 
-gallery.addEventListener('click', (event) => {
-  event.preventDefault();
+gallery.addEventListener('click', (evnt) => {
+  evnt.preventDefault();
 
-  const linkToSmallPhoto = event.target.closest('a');
+  const linkToSmallPhoto = evnt.target.closest('a');
 
   if (linkToSmallPhoto) {
-    mainImg.src = linkToSmallPhoto;
+    mainImg.src = linkToSmallPhoto.href;
   }
 });
