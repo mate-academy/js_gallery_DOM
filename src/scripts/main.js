@@ -3,10 +3,10 @@
 const bigImg = document.querySelector('#largeImg');
 const thumbsList = document.querySelector('#thumbs');
 
-thumbsList.addEventListener('click', (event) => {
-  event.preventDefault();
+thumbsList.addEventListener('click', (ev) => {
+  ev.preventDefault();
 
-  const link = event.target.closest('.list-item__link');
+  const link = ev.target.closest('.list-item__link');
 
   bigImg.src = link.href;
 });
