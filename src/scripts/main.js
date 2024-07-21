@@ -21,5 +21,5 @@ function getLargeImgUrl(thumbUrl) {
   const thumbUrlParts = thumbUrl.split('/');
   const nameThumbFile = thumbUrlParts[thumbUrlParts.length - 1].split('.')[0];
 
-  return `../images/${nameThumbFile.replace('-thumb', '')}.png`;
+  return `images/${nameThumbFile.replace('-thumb', '')}.png`;
 }
