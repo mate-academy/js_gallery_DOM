@@ -9,17 +9,7 @@ function showImage(e) {
   e.preventDefault();
 
   const target = e.target;
+  const largeImageUrl = target.closest('.list-item__link')?.href;
 
-  if (target.className.includes('gallery__thumb')) {
-    const thumbUrl = target.src;
-
-    largeImage.src = getLargeImgUrl(thumbUrl);
-  }
-}
-
-function getLargeImgUrl(thumbUrl) {
-  const thumbUrlParts = thumbUrl.split('/');
-  const nameThumbFile = thumbUrlParts[thumbUrlParts.length - 1].split('.')[0];
-
-  return `images/${nameThumbFile.replace('-thumb', '')}.png`;
+  largeImage.src = largeImageUrl;
 }
