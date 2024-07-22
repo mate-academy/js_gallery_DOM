@@ -3,10 +3,10 @@
 const gallery = document.querySelector('.gallery');
 const mainImg = document.querySelector('.gallery__large-img');
 
-const clickHnadler = (event) => {
-  event.preventDefault();
+const clickHnadler = (e) => {
+  e.preventDefault();
 
-  const target = event.target;
+  const target = e.target;
 
   mainImg.src = target.parentNode.href;
 };
