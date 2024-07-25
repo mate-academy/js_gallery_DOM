@@ -2,17 +2,19 @@
 
 const largeImage = document.getElementById('largeImg');
 
-document.getElementById('thumbs').addEventListener('mousedown', (ev) => {
-  const currentLink = ev.target.closest('.list-item__link');
-  const currentImage = ev.target.closest('.gallery__thumb');
+function ready() {
+  const wrapper = document.getElementById('thumbs');
 
-  if (currentImage) {
-    currentLink.addEventListener('click', (e) => {
-      e.preventDefault();
-    });
+  wrapper.addEventListener('click', function (e) {
+    e.preventDefault();
 
-    const newSrc = ev.target.getAttribute('src');
+    const link = e.target.closest('a');
 
-    largeImage.setAttribute('src', `${newSrc}`);
-  }
-});
+    if (!link) {
+      return;
+    }
+    largeImage.setAttribute('src', link.href);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', ready);
