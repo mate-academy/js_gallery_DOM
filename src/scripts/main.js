@@ -11,7 +11,7 @@ document.getElementById('thumbs').addEventListener('mousedown', (ev) => {
       e.preventDefault();
     });
 
-    const newSrc = event.target.getAttribute('src');
+    const newSrc = ev.target.getAttribute('src');
 
     largeImage.setAttribute('src', `${newSrc}`);
   }
