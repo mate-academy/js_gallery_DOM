@@ -1,0 +1,37 @@
+body {
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  display: flex;
+}
+
+li {
+  list-style-type: none;
+}
+
+.gallery {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+
+.gallery__large-img {
+  width: 450px;
+}
+
+.gallery__list {
+  margin-top: 0;
+  padding-left: 0;
+  display: flex;
+}
+
+.gallery__img {
+  border: 1px solid #d3d3d3;
+  border-radius: 4px;
+  padding: 3px;
+}
+
+.gallery__thumb {
+  width: 83px;
+}
+/*# sourceMappingURL=index.971c2ea4.css.map */
