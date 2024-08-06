@@ -7,9 +7,6 @@ thumbs.addEventListener('click', (e) => {
   const linkEl = e.target.closest('.list-item__link');
 
   if (thumbs.contains(linkEl)) {
-    const newSrc = linkEl.getAttribute('href');
-
-    largeImgEl.setAttribute('src', new URL(newSrc, window.location).href);
+    largeImgEl.src = linkEl.href;
   }
- 
 });
