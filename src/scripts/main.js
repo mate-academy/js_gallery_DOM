@@ -7,9 +7,7 @@ listLinks.addEventListener('click', (ev) => {
   ev.preventDefault();
 
   const link = ev.target.closest('a');
+  const href = link.getAttribute('href');
 
-  galery.setAttribute(
-    'src',
-    'http://' + window.location.host + link.getAttribute('href'),
-  );
+  galery.setAttribute('src', document.URL + href.slice(1, href.length));
 });
