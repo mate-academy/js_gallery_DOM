@@ -6,8 +6,13 @@ const container = document.getElementById('thumbs');
 container.addEventListener('click', (evt) => {
   evt.preventDefault();
 
-  const link = evt.target.closest('.list-item__link');
-  const newPicture = link.getAttribute('href');
+  let target = evt.target;
 
-  mainPicture.src = newPicture;
+  if (target.tagName === 'IMG') {
+    target = target.parentElement;
+  }
+
+  const link = target.getAttribute('href');
+
+  mainPicture.setAttribute('src', link);
 });
