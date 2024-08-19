@@ -1,11 +1,11 @@
 'use strict';
 
-const largeImg = document.querySelector('#largeImg');
 const thumbCollection = document.querySelector('.gallery__list');
 
 thumbCollection.addEventListener('click', function (e) {
   e.preventDefault();
 
+  const largeImg = document.querySelector('#largeImg');
   const target = e.target.closest('a');
 
   if (!target) {
@@ -16,9 +16,5 @@ thumbCollection.addEventListener('click', function (e) {
     return;
   }
 
-  selectThumb(target);
+  largeImg.src = target.href;
 });
-
-function selectThumb(thumb) {
-  largeImg.src = thumb.href;
-}
