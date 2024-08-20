@@ -6,6 +6,6 @@ const pictures = document.querySelectorAll('a');
 pictures.forEach((picture) => {
   picture.addEventListener('click', (e) => {
     e.preventDefault();
-    generalPicture.src = `${picture.href}`;
+    generalPicture.src = picture.href;
   });
 });
