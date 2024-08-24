@@ -12,7 +12,7 @@ thumbsLinks.addEventListener('click', (e) => {
     return;
   }
 
-  const imgSrc = link.getAttribute('href');
+  const imgSrc = link.href;
 
   largeImg.src = imgSrc;
 });
