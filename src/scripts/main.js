@@ -1,5 +1,5 @@
 'use strict';
-
+const largeImg = document.getElementById('largeImg');
 // eslint-disable-next-line no-shadow
 document.getElementById('thumbs').addEventListener('click', (event) => {
   event.preventDefault();
