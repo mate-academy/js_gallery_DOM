@@ -1,5 +1,6 @@
 'use strict';
 
+// eslint-disable-next-line no-shadow
 document.getElementById('thumbs').addEventListener('click', (event) => {
   event.preventDefault();
 
