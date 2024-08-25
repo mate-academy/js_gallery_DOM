@@ -4,15 +4,7 @@
 document.getElementById('thumbs').addEventListener('click', (event) => {
   event.preventDefault();
 
-  let target = event.target;
+   const image = event.target.closest('.list-item__link');
 
-  if (target.tagName === 'IMG') {
-    target = target.parentElement;
-  }
-
-  if (target.tagName === 'A') {
-    const largeImg = document.getElementById('largeImg');
-
-    largeImg.src = target.href;
-  }
+  largeImg.src = image.href;
 });
