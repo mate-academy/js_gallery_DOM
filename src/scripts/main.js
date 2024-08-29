@@ -9,8 +9,8 @@ li.forEach((element) => {
   link.addEventListener('click', (eventOfClick) => {
     eventOfClick.preventDefault();
 
-    const href = link.getAttribute('href');
+    const href = link.cloneNode('href');
 
-    largeImg.setAttribute('src', `http://localhost:3001${href}`);
+    largeImg.setAttribute('src', href);
   });
 });
