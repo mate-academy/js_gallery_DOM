@@ -13,7 +13,7 @@ imgList.addEventListener('click', (event) => {
     return;
   }
 
-  const newImgSrc = img.getAttribute('href');
+  const newImgSrc = img.href;
 
   largeImg.setAttribute('src', newImgSrc);
 });
