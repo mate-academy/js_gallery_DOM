@@ -2,7 +2,7 @@
 
 const listOfImages = document.querySelector('.gallery__list');
 const mainImg = document.getElementById('largeImg');
-let imgPath = '';
+let imgSource = '';
 
 listOfImages.addEventListener('click', (e) => {
   const { target } = e;
@@ -10,12 +10,12 @@ listOfImages.addEventListener('click', (e) => {
   e.preventDefault();
 
   if (target.tagName.toLowerCase() === 'img') {
-    imgPath = target.closest('a').href;
-    mainImg.src = imgPath;
+    imgSource = target.closest('a').href;
+    mainImg.src = imgSource;
   }
 
   if (target.tagName.toLowerCase() === 'a') {
-    imgPath = target.href;
-    mainImg.src = imgPath;
+    imgSource = target.href;
+    mainImg.src = imgSource;
   }
 });
