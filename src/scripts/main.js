@@ -3,8 +3,8 @@
 const largeImg = document.querySelector('#largeImg');
 const smallImg = document.querySelectorAll('.list-item__link');
 
-const arr = Array.from(smallImg).map(
-  (item) => item.getAttribute('href').replace(/\/images\/landscape-|.png/g, ''),
+const imagesLinksArray = Array.from(smallImg).map(
+  (item) => item.getAttribute('href'),
   {},
 );
 
@@ -14,7 +14,8 @@ smallImg.forEach(
       e.preventDefault();
 
       largeImg.removeAttribute('src');
-      largeImg.setAttribute('src', `./images/landscape-${arr[i]}.png`);
+
+      largeImg.setAttribute('src', `${imagesLinksArray[i]}`);
     }),
   {},
 );
