@@ -13,6 +13,7 @@ smallImg.forEach(
     item.addEventListener('click', function (e) {
       e.preventDefault();
 
+      largeImg.removeAttribute('src');
       largeImg.setAttribute('src', `./images/landscape-${arr[i]}.png`);
     }),
   {},
