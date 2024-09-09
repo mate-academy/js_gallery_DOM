@@ -14,7 +14,7 @@ el.container.addEventListener('click', (ev) => {
     if (isClickFound) {
       ev.preventDefault();
 
-      const path = `.${image.closest('a').getAttribute('href')}`;
+      const path = `${image.closest('a').getAttribute('href')}`;
 
       el.largeImg.setAttribute('src', path);
     }
