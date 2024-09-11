@@ -11,13 +11,10 @@ gallery.addEventListener('click', (e) => {
     return;
   }
 
-  const imgSrc = new URL(imgLink.getAttribute('href'), window.location.origin)
-    .href;
-  const imgTitle = imgLink.getAttribute('title');
   const largeImg = document.querySelector(
     '#largeImg.gallery__large-img.gallery__img',
   );
 
-  largeImg.src = imgSrc;
-  largeImg.title = imgTitle;
+  largeImg.src = imgLink.href;
+  largeImg.title = imgLink.title;
 });
