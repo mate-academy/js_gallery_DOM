@@ -1,4 +1,4 @@
-1. Replace `<your_account>` with your Github username in the link
+1. Replace `Dorosh90` with your Github username in the link
     - [DEMO LINK](https://<your_account>.github.io/js_gallery_DOM/)
 2. Follow [this instructions](https://mate-academy.github.io/layout_task-guideline/)
     - Run `npm run test` command to test your code;
