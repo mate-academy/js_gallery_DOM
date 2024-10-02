@@ -9,12 +9,6 @@ const links = document.querySelectorAll('.list-item__link');
 galleryList.addEventListener('click', (e) => {
   e.preventDefault();
 
-  const checkClick = e.target.closest('.list-item__link');
-
-  if (!checkClick) {
-    return;
-  }
-
   images.forEach((image) => {
     if (image === e.target) {
       mainImg.src = image.closest('.list-item__link').href;
