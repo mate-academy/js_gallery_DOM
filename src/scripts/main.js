@@ -8,9 +8,7 @@ galleryList.addEventListener('click', (e) => {
 
   const imgLink = e.target.closest('.list-item__link');
 
-  if (!imgLink) {
-    return;
+  if (imgLink) {
+    mainImg.src = imgLink.href;
   }
-
-  mainImg.src = imgLink.href;
 });
