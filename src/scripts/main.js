@@ -5,16 +5,25 @@ const galleryList = document.getElementById('thumbs');
 
 galleryList.addEventListener('click', changeImg);
 
-function changeImg(clickEvent) {
-  clickEvent.preventDefault();
+function changeImg(e) {
+  e.preventDefault();
 
-  if (clickEvent.target.classList.contains('gallery__thumb')) {
-    if (largeImg.src !== clickEvent.target.parentNode.href) {
-      largeImg.src = clickEvent.target.parentNode.href;
+  const target =
+    e.target.closest('.gallery__thumb') || e.target.closest('.list-item__link');
+
+  if (!target) {
+    return;
+  }
+
+  if (e.target.classList.contains('gallery__thumb')) {
+    if (
+      largeImg.getAttribute('src') !== e.target.parentNode.getAttribute('href')
+    ) {
+      largeImg.setAttribute('src', e.target.parentNode.getAttribute('href'));
     }
-  } else if (clickEvent.target.classList.contains('list-item__link')) {
-    if (largeImg.src !== clickEvent.target.href) {
-      largeImg.src = clickEvent.target.href;
+  } else if (e.target.classList.contains('list-item__link')) {
+    if (largeImg.getAttribute('src') !== e.target.getAttribute('href')) {
+      largeImg.setAttribute('src', e.target.getAttribute('href'));
     }
   }
 }
