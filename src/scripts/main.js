@@ -9,17 +9,5 @@ thumbs.addEventListener('click', (event) => {
 
   const target = event.target;
 
-  if (target.tagName === 'IMG') {
-    const newSrc = target.getAttribute('href');
-
-    largeImg.src = newSrc;
-  } else if (target.tagName === 'A') {
-    const newSrc = target.getAttribute('href');
-
-    largeImg.src = newSrc;
-  }
-
-  if (largeImg.src.startsWith(window.location.origin)) {
-    largeImg.src = largeImg.src.replace(window.location.origin, '');
-  }
+  largeImg.src = target.closest('.list-item__link').href;
 });
