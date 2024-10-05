@@ -6,8 +6,8 @@ document.querySelector('#thumbs').addEventListener('click', (clickEvent) => {
   const link = clickEvent.target.closest('a.list-item__link');
 
   if (link) {
-    document
-      .querySelector('#largeImg')
-      .setAttribute('src', link.getAttribute('href'));
+    const fullUrl = new URL(link.getAttribute('href'), window.location.origin);
+
+    document.querySelector('#largeImg').setAttribute('src', fullUrl);
   }
 });
