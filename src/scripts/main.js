@@ -1,16 +1,16 @@
 'use strict';
 
-const bigItem = document.querySelector('.gallery__large-img');
+const largeImg = document.querySelector('.gallery__large-img');
 
-const smallItem = document.querySelector('.gallery__list');
+const smallImg = document.querySelector('.gallery__list');
 
-smallItem.addEventListener('click', function (e) {
+smallImg.addEventListener('click', (e) => {
   const link = e.target.closest('.list-item__link');
 
   if (!link) {
     return;
   }
 
-  bigItem.src = link.href;
+  largeImg.src = link.href;
   e.preventDefault();
 });
