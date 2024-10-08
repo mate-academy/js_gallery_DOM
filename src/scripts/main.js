@@ -3,7 +3,7 @@
 const largeImage = document.querySelector('#largeImg');
 const smallImage = document.querySelector('#thumbs');
 
-smallImage.addEventListener('click', (event) => {
+smallImage.addEventListener('click', () => {
   event.preventDefault();
   event.target.closest('.list-item__link');
 
