@@ -1,4 +1,4 @@
-1. Replace `<your_account>` with your Github username in the link
+1. Replace `igols` with your Github username in the link
     - [DEMO LINK](https://<your_account>.github.io/js_gallery_DOM/)
 2. Follow [this instructions](https://mate-academy.github.io/layout_task-guideline/)
     - Run `npm run test` command to test your code;
@@ -16,7 +16,7 @@ Create an image gallery where the main image changes by the click on a thumbnail
 **Notes:**
 
 - Use event delegation.
-- You must only modify the file `src/scripts/main.js`.
+- You must only modify the file `src/scripts/main.js`
 
 ### Gif of result
 ![Gif example](./src/images/example.gif)
