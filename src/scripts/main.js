@@ -1,12 +1,12 @@
 'use strict';
 
-const largImg = document.getElementById('largeImg');
+const largeImg = document.getElementById('largeImg');
 const thumbs = document.getElementById('thumbs');
 
 thumbs.addEventListener('click', (e) => {
   e.preventDefault();
 
-  const target = event.target;
+  const target = e.target;
   let newSrc;
 
   if (target.tagName === 'IMG') {
@@ -16,6 +16,6 @@ thumbs.addEventListener('click', (e) => {
   }
 
   if (newSrc) {
-    largImg.src = newSrc;
+    largeImg.src = newSrc;
   }
 });
