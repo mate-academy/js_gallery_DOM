@@ -1,17 +1,14 @@
 'use strict';
 
-const gallery = document.getElementById('thumbs')
-const largeImg = document.getElementById('largeImg')
-console.log(largeImg)
+const gallery = document.getElementById('thumbs');
+const largeImg = document.getElementById('largeImg');
 
-gallery.addEventListener('click', function (event) {
-  event.preventDefault();
+gallery.addEventListener('click', (click) => {
+  click.preventDefault();
 
-  const target = event.target;
-  const link = target.closest('a')
-  console.log(link)
+  const target = click.target;
+  const link = target.closest('a');
 
   largeImg.src = link.href;
-  largeImg.alt = link.title
-})
-
+  largeImg.alt = link.title;
+});
