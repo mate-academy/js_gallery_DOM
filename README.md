@@ -1,22 +1,30 @@
-1. Replace `<your_account>` with your Github username in the link
-    - [DEMO LINK](https://<your_account>.github.io/js_gallery_DOM/)
-2. Follow [this instructions](https://mate-academy.github.io/layout_task-guideline/)
-    - Run `npm run test` command to test your code;
-    - Run `npm run test:only -- -n` to run fast test ignoring linter;
-    - Run `npm run test:only -- -l` to run fast test with additional info in console ignoring linter.
+# Create a Gallery
 
-### Task: Create a gallery
+## 🎮 About the Project
+This project implements an interactive image gallery where the main image updates dynamically when clicking on a thumbnail. The gallery enhances the user experience by providing a smooth and intuitive way to browse images.
 
-Create an image gallery where the main image changes by the click on a thumbnail.
+## 🚀 Tech Stack
+- **HTML** (BEM methodology for structured markup)
+- **CSS** (Basic styling)
+- **JavaScript** (For handling image selection and updates)
 
-**Requirements:**
-- A click can be either on a small `img` image or on `a` outside of it. `event.target`
- will be, respectively, either `img` or `a`.
+## 🛠️ Tools & Dependencies
+- **ESLint** – Ensuring code quality  
+- **Prettier** – Code formatting for readability  
+- **Cypress** – End-to-end testing  
+- **Mochawesome** – Test reporting  
+- **Parcel** – Web application bundler  
 
-**Notes:**
+## 📌 Features
+✅ Displays a main image with a set of thumbnails  
+✅ Updates the main image when clicking on a thumbnail  
+✅ Smooth transition between image changes  
 
-- Use event delegation.
-- You must only modify the file `src/scripts/main.js`.
+## 🌐 Demo
+🔗 [Live Demo](https://AndriiZakharenko.github.io/gallery/)
 
-### Gif of result
-![Gif example](./src/images/example.gif)
+## 📸 Reference Image  
+<img src="./src/images/example.gif" alt="reference image" width="500px" />
+
+## 📜 License
+This project is forked from 💻 [Mate Academy](https://github.com/mate-academy/js_gallery_DOM)
