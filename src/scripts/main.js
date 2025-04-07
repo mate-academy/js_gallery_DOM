@@ -1,8 +1,7 @@
 'use strict';
 
-const smallImage = document.querySelectorAll('.gallery__img');
+const smallImage = document.querySelectorAll('.gallery__thumb');
 const imageSrc = ['first', 'second', 'third', 'fourth', 'fifth'];
-const baseUrl = 'http://localhost:3001';
 
 smallImage.forEach((img, index) => {
   img.addEventListener('click', (e) => {
@@ -10,6 +9,6 @@ smallImage.forEach((img, index) => {
 
     const bigImage = document.getElementById('largeImg');
 
-    bigImage.src = `${baseUrl}/images/landscape-${imageSrc[index - 1]}.png`;
+    bigImage.src = `http://localhost:3001/images/landscape-${imageSrc[index]}.png`;
   });
 });
