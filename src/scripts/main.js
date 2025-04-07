@@ -1,14 +1,20 @@
 'use strict';
 
-const smallImage = document.querySelectorAll('.gallery__thumb');
+const gallery = document.querySelector('.gallery');
 const imageSrc = ['first', 'second', 'third', 'fourth', 'fifth'];
 
-smallImage.forEach((img, index) => {
-  img.addEventListener('click', (e) => {
-    e.preventDefault();
+gallery.addEventListener('click', (e) => {
+  e.preventDefault();
 
-    const bigImage = document.getElementById('largeImg');
+  const clickedElement = e.target.closest('.gallery__thumb');
 
-    bigImage.src = `http://localhost:3001/images/landscape-${imageSrc[index]}.png`;
-  });
+  if (!clickedElement) {
+    return;
+  }
+
+  const bigImage = document.getElementById('largeImg');
+  const thumbnails = [...document.querySelectorAll('.gallery__thumb')];
+  const index = thumbnails.indexOf(clickedElement);
+
+  bigImage.src = `http://localhost:3001/images/landscape-${imageSrc[index]}.png`;
 });
