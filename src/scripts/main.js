@@ -1,10 +1,7 @@
 'use strict';
 
-document.querySelector('.gallery').onclick = function () {
-  const img = event.target.closest('img');
-
-  if (!img) {
-    return;
+document.querySelector('.gallery').addEventListener('click', function (ev) {
+  if (ev.target.tagName === 'IMG') {
+    document.querySelector('.main-image').src = ev.target.src;
   }
-  document.querySelector('.main-image').src = img.src;
-};
+});
