@@ -20,5 +20,5 @@ document.getElementById('thumbs').addEventListener('click', (ev) => {
       return;
   }
 
-  largeImg.setAttribute('src', `${window.location.origin}${largeImgSrc}`);
+  largeImg.setAttribute('src', largeImgSrc);
 });
