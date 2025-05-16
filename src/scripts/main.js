@@ -9,11 +9,11 @@ document.getElementById('thumbs').addEventListener('click', (ev) => {
 
   switch (target.tagName.toLowerCase()) {
     case 'img':
-      largeImgSrc = target.closest('a').getAttribute('href');
+      largeImgSrc = target.closest('a').href;
       break;
 
     case 'a':
-      largeImgSrc = target.getAttribute('href');
+      largeImgSrc = target.href;
       break;
 
     default:
