@@ -10,5 +10,9 @@ list.addEventListener('click', (event) => {
 
   const link = event.target.closest('.list-item__link');
 
+  if (link === null) {
+    return;
+  }
+
   mainImg.src = link.href;
 });
