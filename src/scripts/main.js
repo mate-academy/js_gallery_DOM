@@ -5,13 +5,13 @@ const largeImg = document.getElementById('largeImg');
 
 thumbs.addEventListener('click', (e) => {
   const link = e.target.closest('.list-item__link');
-  const srcImg = link.getAttribute('href');
-
-  e.preventDefault();
 
   if (!link) {
     return;
   }
 
+  const srcImg = link.getAttribute('href');
+
+  e.preventDefault();
   largeImg.src = srcImg;
 });
