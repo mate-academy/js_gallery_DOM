@@ -8,6 +8,10 @@ const fifthImage = document.querySelector('a[title="Image 5"]');
 const primaryImage = document.querySelector('.gallery__large-img');
 
 function imageChanger(element) {
+  if (!element) {
+    return;
+  }
+
   element.addEventListener('click', (eventer) => {
     eventer.preventDefault();
 
