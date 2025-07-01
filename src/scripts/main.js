@@ -15,8 +15,7 @@ thumbs.addEventListener('click', (ev) => {
   }
 
   if (link) {
-    const href = link.getAttribute('href');
-    const absoluteSrc = window.location.origin + href;
+    const absoluteSrc = link.href;
 
     largeImg.setAttribute('src', absoluteSrc);
   }
