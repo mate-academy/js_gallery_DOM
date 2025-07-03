@@ -1,13 +1,16 @@
 'use strict';
 
 const largeImg = document.getElementById('largeImg');
+const gallery = document.querySelector('.gallery');
 
-const links = document.querySelectorAll('.list-item__link');
+gallery.addEventListener('click', (e) => {
+  e.preventDefault();
 
-links.forEach((link) => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
+  const link = e.target.closest('.list-item__link');
 
-    largeImg.src = link.href;
-  });
+  if (!link || !gallery.contains(link)) {
+    return;
+  }
+
+  largeImg.src = link.href;
 });
