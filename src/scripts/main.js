@@ -5,16 +5,20 @@ document.addEventListener('DOMContentLoaded', function () {
   const listImgs = document.getElementById('thumbs');
 
   listImgs.addEventListener('click', function (ev) {
-    ev.preventDefault();
+    if (ev) {
+      ev.preventDefault();
 
-    let link;
+      let link;
 
-    if (ev.target.tagName === 'IMG') {
-      link = ev.target.closest('a');
-    } else {
-      link = ev.target;
+      if (ev.target.tagName === 'IMG') {
+        link = ev.target.closest('a');
+      } else {
+        link = ev.target;
+      }
+
+      if (link && link.href) {
+        mainImg.src = link.href;
+      }
     }
-
-    mainImg.src = link.href;
   });
 });
