@@ -11,9 +11,7 @@ thumbs.addEventListener('click', function (eventMouse) {
   const link = eventMouse.target.closest('a');
 
   // Перевіряємо, чи дійсно клікнули на мініатюру
-  if (!link || !thumbs.contains(link)) {
-    return;
-  }
+  if (!link || !thumbs.contains(link)) return;
 
   const imgSrc = link.getAttribute('href');
   const imgAlt = link.getAttribute('title');
