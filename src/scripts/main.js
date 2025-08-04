@@ -6,7 +6,7 @@ const mainImg = document.getElementById('largeImg');
 list.addEventListener('click', (selecting) => {
   const link = selecting.target.closest('.list-item a');
 
-  if (!link) {
+  if (link === null) {
     return;
   }
   selecting.preventDefault();
