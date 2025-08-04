@@ -9,4 +9,8 @@ list.addEventListener('click', (selecting) => {
   selecting.preventDefault();
 
   mainImg.src = link.href;
+
+  if (!link) {
+    return;
+  }
 });
