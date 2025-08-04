@@ -6,11 +6,10 @@ const mainImg = document.getElementById('largeImg');
 list.addEventListener('click', (selecting) => {
   const link = selecting.target.closest('.list-item a');
 
-  selecting.preventDefault();
-
-  mainImg.src = link.href;
-
   if (!link) {
     return;
   }
+  selecting.preventDefault();
+
+  mainImg.src = link.href;
 });
