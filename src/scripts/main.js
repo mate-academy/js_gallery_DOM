@@ -11,5 +11,6 @@ thumbs.addEventListener('click', (e) => {
   }
 
   e.preventDefault();
+
   mainImage.src = link.href;
 });
