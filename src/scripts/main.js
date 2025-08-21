@@ -4,17 +4,15 @@ const largeImg = document.getElementById('largeImg');
 const thumbs = document.getElementById('thumbs');
 
 thumbs.addEventListener('click', (e) => {
+  const target = e.target.closest('a');
+
+  if (!target) {
+    return;
+  }
+
   e.preventDefault();
 
-  let target = e.target;
+  const hrefAttrValue = target.href;
 
-  if (target.tagName !== 'A') {
-    target = target.closest('a');
-  }
-
-  if (target) {
-    const hrefAttrValue = target.href;
-
-    largeImg.src = hrefAttrValue;
-  }
+  largeImg.src = hrefAttrValue;
 });
