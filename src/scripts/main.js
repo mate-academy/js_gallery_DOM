@@ -1,18 +1,22 @@
 'use strict';
 
-const ul = document.querySelector('ul');
+const ul = document.querySelector('#thumbs');
 const mainPhoto = document.querySelector('#largeImg');
 
 ul.addEventListener('click', (e) => {
-  const li = e.target.closest('.list-item');
+  const anchor = e.target.closest('a');
 
-  e.preventDefault();
-
-  if (!li) {
+  if (!anchor || !ul.contains(anchor)) {
     return;
   }
 
-  const link = li.querySelector('a');
+  e.preventDefault();
 
-  mainPhoto.src = link.href;
+  mainPhoto.src = anchor.href;
+
+  const thumbImg = anchor.querySelector('img');
+
+  if (thumbImg) {
+    mainPhoto.alt = thumbImg.alt;
+  }
 });
