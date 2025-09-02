@@ -7,7 +7,10 @@ ul.addEventListener('click', function (even) {
   even.preventDefault();
 
   const a = even.target.closest('a');
-  const targetHref = a.href;
 
-  mainImg.src = targetHref;
+  if (a) {
+    const targetHref = a.href;
+
+    mainImg.src = targetHref;
+  }
 });
