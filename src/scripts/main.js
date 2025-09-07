@@ -3,9 +3,13 @@
 const list = document.querySelector('.gallery__list');
 
 list.addEventListener('click', (e) => {
-  const largeImg = document.querySelector('.gallery__large-img');
+  const mainImg = document.querySelector('.gallery__large-img');
   const imgLink = e.target.closest('.list-item__link');
+  const img = e.target.closest('.gallery__img');
 
-  e.preventDefault();
-  largeImg.setAttribute('src', imgLink.getAttribute('href'));
+  if (imgLink) {
+    e.preventDefault();
+    mainImg.setAttribute('src', imgLink.getAttribute('href'));
+    mainImg.setAttribute('alt', img.getAttribute('alt'));
+  }
 });
