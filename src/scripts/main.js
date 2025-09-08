@@ -1,13 +1,26 @@
 'use strict';
 
-const mainImage = document.querySelector('div img');
+const mainImage = document.querySelector('#largeImg');
 const thumbnailImages = document.querySelector('.gallery');
 
-thumbnailImages.addEventListener('click', (events) => {
-  const a = events.target.closest('a');
+if (mainImage && thumbnailImages) {
+  thumbnailImages.addEventListener('click', (events) => {
+    const a = events.target.closest('a');
 
-  if (events.target.tagName === 'IMG') {
-    mainImage.src = a.href;
-    events.preventDefault();
-  }
-});
+    if (a || events.target.tagName === 'IMG') {
+      events.preventDefault();
+
+      let newSrc = '';
+
+      if (a) {
+        newSrc = a.href;
+      } else if (events.target.tagName === 'IMG') {
+        newSrc = events.target.src;
+      }
+
+      if (newSrc) {
+        mainImage.src = newSrc;
+      }
+    }
+  });
+}
