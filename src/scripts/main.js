@@ -5,22 +5,24 @@ const thumbnailImages = document.querySelector('.gallery');
 
 if (mainImage && thumbnailImages) {
   thumbnailImages.addEventListener('click', (events) => {
+    const target = events.target;
+
+    if (!(target instanceof Element)) {
+      return;
+    }
+
     const a = events.target.closest('a');
+    let newSrc = '';
 
-    if (a || events.target.tagName === 'IMG') {
+    if (a) {
       events.preventDefault();
+      newSrc = a.href;
+    } else if (target.tagName === 'IMG') {
+      newSrc = target.src;
+    }
 
-      let newSrc = '';
-
-      if (a) {
-        newSrc = a.href;
-      } else if (events.target.tagName === 'IMG') {
-        newSrc = events.target.src;
-      }
-
-      if (newSrc) {
-        mainImage.src = newSrc;
-      }
+    if (newSrc) {
+      mainImage.src = newSrc;
     }
   });
 }
