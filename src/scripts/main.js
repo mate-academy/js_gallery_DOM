@@ -4,22 +4,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const thumbs = document.getElementById('thumbs');
   const largeImg = document.getElementById('largeImg');
 
+  if (!thumbs || !largeImg) {
+    return;
+  }
+
   thumbs.addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+
+    if (!link || !thumbs.contains(link)) {
+      return;
+    }
+
+    const img = link.querySelector('img');
+
+    if (!img) {
+      return;
+    }
+
     e.preventDefault();
 
-    let target = e.target;
+    const href = link.getAttribute('href');
+    const absoluteHref = new URL(href, window.location.origin).href;
 
-    if (target.tagName === 'IMG') {
-      target = target.closest('a');
-    }
+    largeImg.setAttribute('src', absoluteHref);
 
-    if (target && target.tagName === 'A') {
-      const href = target.getAttribute('href');
+    const alt = img.getAttribute('alt') || '';
 
-      // I begged ChatGPT to help me fix test's issue and it offered this:
-      const absoluteUrl = new URL(href, window.location.origin).href;
-
-      largeImg.src = absoluteUrl;
-    }
+    largeImg.setAttribute('alt', alt);
   });
 });
