@@ -21,12 +21,15 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+    const href = link.getAttribute('href');
+
+    if (!href) {
+      return;
+    }
+
     e.preventDefault();
 
-    const href = link.getAttribute('href');
-    const absoluteHref = new URL(href, window.location.origin).href;
-
-    largeImg.setAttribute('src', absoluteHref);
+    largeImg.setAttribute('src', href);
 
     const alt = img.getAttribute('alt') || '';
 
