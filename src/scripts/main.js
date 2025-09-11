@@ -3,10 +3,6 @@
 const mainImage = document.getElementById('largeImg');
 const galleryList = document.querySelector('.gallery__list');
 
-if (!mainImage || !galleryList) {
-  // Elements not found, silently exit
-}
-
 if (mainImage && galleryList) {
   galleryList.addEventListener('click', (e) => {
     const target = e.target;
