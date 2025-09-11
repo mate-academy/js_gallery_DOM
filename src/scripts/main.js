@@ -3,14 +3,24 @@
 const mainImage = document.getElementById('largeImg');
 const galleryList = document.querySelector('.gallery__list');
 
-galleryList.addEventListener('click', (e) => {
-  e.preventDefault();
+if (mainImage && galleryList) {
+  galleryList.addEventListener('click', (e) => {
+    const link = e.target.closest('a, .list-item__link');
 
-  const link = e.target.closest('.list-item__link');
+    if (!link && !galleryList.contains(link)) {
+      return;
+    }
+    e.preventDefault();
 
-  if (!link) {
-    return;
-  }
+    const href = link.getAttribute('href');
 
-  mainImage.src = link.href;
-});
+    if (href) {
+      mainImage.src = href;
+    }
+
+    const thumbImg =
+      e.target.tagName === 'IMG' ? e.target : link.querySelector('img');
+
+    mainImage.alt = (thumbImg && thumbImg.getAttribute('alt')) || '';
+  });
+}
