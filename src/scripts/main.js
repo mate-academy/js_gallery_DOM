@@ -3,14 +3,27 @@
 const mainImage = document.getElementById('largeImg');
 const galleryList = document.querySelector('.gallery__list');
 
+if (!mainImage || !galleryList) {
+  // Elements not found, silently exit
+}
+
 if (mainImage && galleryList) {
   galleryList.addEventListener('click', (e) => {
-    const link = e.target.closest('a, .list-item__link');
+    const target = e.target;
 
-    if (!link && !galleryList.contains(link)) {
+    if (!(target instanceof Element)) {
       return;
     }
-    e.preventDefault();
+
+    const link = target.closest('a, a.list-item__link');
+
+    if (!link || !galleryList.contains(link)) {
+      return;
+    }
+
+    if (link.matches('a')) {
+      e.preventDefault();
+    }
 
     const href = link.getAttribute('href');
 
@@ -18,8 +31,8 @@ if (mainImage && galleryList) {
       mainImage.src = href;
     }
 
-    const thumbImg =
-      e.target.tagName === 'IMG' ? e.target : link.querySelector('img');
+    const isImg = target.tagName === 'IMG';
+    const thumbImg = isImg ? target : link.querySelector('img');
 
     mainImage.alt = (thumbImg && thumbImg.getAttribute('alt')) || '';
   });
