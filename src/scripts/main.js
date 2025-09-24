@@ -20,11 +20,22 @@ const changeImg = () => {
     }
     evt.preventDefault();
 
-    const relativeSrc = link.getAttribute('href');
-    const absoluteSrc = new URL(relativeSrc, window.location.origin).href;
+    const absoluteSrc = link.href;
+
+    if (!absoluteSrc) {
+      return;
+    }
 
     largeImg.src = absoluteSrc;
+
+    const thumbImg = link.querySelector('img');
+
+    largeImg.alt = thumbImg && thumbImg.alt ? thumbImg.alt : '';
   });
 };
 
-document.addEventListener('DOMContentLoaded', changeImg);
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', changeImg);
+} else {
+  changeImg();
+}
