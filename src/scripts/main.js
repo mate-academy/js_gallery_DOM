@@ -1,19 +1,16 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', function () {
-  const imgGallery = document.getElementById('largeImg');
+  const imgGallery = document.querySelector('.gallery__large-img');
   const links = document.querySelectorAll('.gallery ul li a');
 
   links.forEach((link) => {
-    if (link) {
-      link.addEventListener('click', (e) => {
-        if (link.hasAttribute('href')) {
-          const largeImg = link.getAttribute('href');
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
 
-          imgGallery.setAttribute('src', largeImg);
-          e.preventDefault();
-        }
-      });
-    }
+      if (link.href) {
+        imgGallery.src = link.href;
+      }
+    });
   });
 });
