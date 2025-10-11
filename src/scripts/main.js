@@ -2,15 +2,20 @@
 
 document.addEventListener('DOMContentLoaded', function () {
   const imgGallery = document.querySelector('.gallery__large-img');
-  const links = document.querySelectorAll('.gallery ul li a');
+  const galleryList = document.querySelector('.gallery ul');
 
-  links.forEach((link) => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
+  galleryList.addEventListener('click', (e) => {
+    const a = e.target.closest('a');
 
-      if (link.href) {
-        imgGallery.src = link.href;
-      }
-    });
+    if (!a || !galleryList.contains(a)) {
+      return;
+    }
+
+    e.preventDefault();
+
+    const img = a.querySelector('img');
+
+    imgGallery.src = a.href;
+    imgGallery.alt = img.alt;
   });
 });
