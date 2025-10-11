@@ -3,7 +3,7 @@
 const galleryList = document.querySelector('.gallery__list');
 const largeImage = document.querySelector('#largeImg');
 
-if (galleryList || largeImage) {
+if (galleryList && largeImage) {
   galleryList.addEventListener('click', (e) => {
     const link = e.target.closest('a');
 
