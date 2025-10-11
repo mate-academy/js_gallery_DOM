@@ -5,20 +5,24 @@ const largeImg = document.getElementById('largeImg');
 
 if (thumbs && largeImg) {
   thumbs.addEventListener('click', function (e) {
-    const link = e.target.closest('a');
+    const target = e.target;
 
-    // Only act for anchors inside the thumbs list
+    // guard if target isn't an Element with closest()
+    if (!target || typeof target.closest !== 'function') {
+      return;
+    }
+
+    const link = target.closest('a');
+
+    // only proceed for anchors inside thumbs
     if (!link || !thumbs.contains(link)) {
       return;
     }
 
-    // Prevent navigation for valid thumbnail clicks
+    // prevent navigation for this valid thumbnail click
     e.preventDefault();
 
-    // New src from anchor href
-    const newSrc = link.href;
-
-    // alt from thumbnail <img>, fallback to link.title or empty string
+    const newSrc = link.getAttribute('href');
     const thumbImg = link.querySelector('img');
     const newAlt = thumbImg && thumbImg.alt ? thumbImg.alt : link.title || '';
 
