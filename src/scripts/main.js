@@ -19,7 +19,7 @@ if (galleryList || largeImage) {
       return;
     }
 
-    largeImage.src = link.getAttribute('href');
+    largeImage.src = link.href;
     largeImage.alt = image.alt || 'Large Image';
   });
 }
