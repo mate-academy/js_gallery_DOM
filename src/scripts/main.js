@@ -12,5 +12,9 @@ container.addEventListener('click', (events) => {
 
   events.preventDefault();
   bigImage.src = link.href;
-  bigImage.alt = link.title;
+
+  const thumbImg =
+    events.target.tagName === 'IMG' ? events.target : link.querySelector('img');
+
+  bigImage.alt = thumbImg ? thumbImg.alt : link.title || '';
 });
