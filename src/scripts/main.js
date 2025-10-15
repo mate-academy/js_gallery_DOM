@@ -3,18 +3,24 @@
 const bigImage = document.querySelector('#largeImg');
 const container = document.querySelector('.gallery__list');
 
-container.addEventListener('click', (events) => {
-  const link = events.target.closest('a');
+if (container && bigImage) {
+  container.addEventListener('click', (events) => {
+    const link = events.target.closest('a');
 
-  if (!link) {
-    return;
-  }
+    if (!link) {
+      return;
+    }
 
-  events.preventDefault();
-  bigImage.src = link.href;
+    events.preventDefault();
 
-  const thumbImg =
-    events.target.tagName === 'IMG' ? events.target : link.querySelector('img');
+    const href = link.getAttribute('href');
 
-  bigImage.alt = thumbImg ? thumbImg.alt : link.title || '';
-});
+    const thumbImg =
+      events.target.tagName === 'IMG'
+        ? events.target
+        : link.querySelector('img');
+
+    bigImage.alt = thumbImg?.alt || link.title || '';
+    bigImage.setAttribute('src', href);
+  });
+}
