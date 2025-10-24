@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!largeImg || !thumbs) return;
 
-  // Pobierz wszystkie linki miniaturek
   const thumbLinks = thumbs.querySelectorAll('a');
 
   thumbs.addEventListener('click', (e) => {
@@ -16,7 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const target = e.target.closest('a');
     if (!target) return;
 
-    const newSrc = target.getAttribute('href');
+    // Zamień ./images/... na /images/... dla zgodności z testami
+    const newSrc = target.getAttribute('href').replace(/^\./, '');
     if (newSrc) {
       // Zmień duży obrazek
       largeImg.src = newSrc;
