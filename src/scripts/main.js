@@ -4,7 +4,7 @@ const largeImg = document.getElementById('largeImg');
 const thumbs = document.getElementById('thumbs');
 
 thumbs.addEventListener('click', (event) => {
-  if (event.target.tagName === 'IMG' || event.target.tagName === 'a') {
+  if (event.target.tagName === 'IMG' || event.target.tagName === 'A') {
     event.preventDefault();
 
     let newSrc;
