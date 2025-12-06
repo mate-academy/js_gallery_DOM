@@ -3,27 +3,25 @@
 const mainImg = document.querySelector('#largeImg');
 const galleryList = document.querySelector('#thumbs');
 
-galleryList.addEventListener('click', (e) => {
-  const linkImg = e.target.closest('.list-item__link');
-  const galleryImg = e.target.closest('.gallery__img');
+if (!mainImg || !galleryList) {
+} else {
+  galleryList.addEventListener('click', (e) => {
+    const linkImg = e.target.closest('.list-item__link');
+    const galleryImg = e.target.closest('.gallery__img');
 
-  if (!linkImg && !galleryImg) {
-    return;
-  }
+    if (!linkImg && !galleryImg) {
+      return;
+    }
 
-  if (linkImg) {
-    e.preventDefault();
+    if (linkImg) {
+      e.preventDefault();
+      mainImg.src = linkImg.href;
 
-    const newSrc = linkImg.href;
+      return;
+    }
 
-    mainImg.src = newSrc;
-
-    return;
-  }
-
-  if (galleryImg) {
-    const newSrc = galleryImg.src;
-
-    mainImg.src = newSrc;
-  }
-});
+    if (galleryImg) {
+      mainImg.src = galleryImg.src;
+    }
+  });
+}
