@@ -19,5 +19,5 @@ container.addEventListener('click', (e) => {
     ? link.getAttribute('href')
     : e.target.getAttribute('data-full') || e.target.src;
 
-  mainImage.src = 'http://localhost:3001' + newSrc;
+  mainImage.src = newSrc;
 });
