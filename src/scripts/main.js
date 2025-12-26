@@ -23,5 +23,7 @@ galleryList.addEventListener('click', (e) => {
 
   const mainImg = document.querySelector('.gallery__thumb img');
 
+  e.preventDefault();
+
   mainImg.src = bigUrl;
 });
