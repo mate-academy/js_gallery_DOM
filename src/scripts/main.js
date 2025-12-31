@@ -17,6 +17,6 @@ galleryList.addEventListener('click', (e) => {
       break;
     }
     default:
-      throw new Error('Not an image or a link under the click!');
+      break;
   }
 });
