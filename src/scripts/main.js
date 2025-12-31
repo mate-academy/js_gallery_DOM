@@ -6,9 +6,17 @@ const galleryList = document.querySelector('.gallery__list');
 galleryList.addEventListener('click', (e) => {
   e.preventDefault();
 
-  if (e.target.nodeName === 'IMG') {
-    const imgURL = e.target.parentElement.href;
+  switch (e.target.nodeName) {
+    case 'IMG': {
+      showImg.src = e.target.parentElement.href;
+      break;
+    }
 
-    showImg.src = imgURL;
+    case 'A': {
+      showImg.src = e.target.href;
+      break;
+    }
+    default:
+      throw new Error('Not an image or a link under the click!');
   }
 });
