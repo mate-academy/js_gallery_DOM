@@ -2,13 +2,14 @@
 
 const mainImg = document.getElementById('largeImg');
 
-const li = document.querySelectorAll('ul li');
+const item = document.querySelector('.gallery__list');
 
-const arrayLiOfLi = [...li];
+item.addEventListener('click', () => {
+  event.preventDefault();
 
-for (const item of arrayLiOfLi) {
-  item.querySelector('a').addEventListener('click', () => {
-    event.preventDefault();
-    mainImg.setAttribute('src', item.querySelector('a').getAttribute('href'));
-  });
-}
+  const link = event.target.closest('a');
+
+  if (link) {
+    mainImg.setAttribute('src', link.href);
+  }
+});
