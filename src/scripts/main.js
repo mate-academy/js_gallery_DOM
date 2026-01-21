@@ -4,7 +4,7 @@ const thumbs = document.getElementById('thumbs');
 const largeImg = document.getElementById('largeImg');
 
 thumbs.addEventListener('click', (e) => {
-  const link = event.target.closest('a');
+  const link = e.target.closest('a');
 
   if (!link) {
     return;
