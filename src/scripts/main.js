@@ -4,19 +4,13 @@ const gallary = document.querySelector('.gallery__list');
 const bigImg = document.querySelector('.gallery__img');
 
 const callback = (events) => {
-  const img = events.target.closest('img');
-
-  if (!img) {
-    return;
-  }
-
-  const link = img.closest('a');
+  const link = events.target.closest('a');
 
   if (!link) {
     return;
   }
 
-  event.preventDefault();
+  events.preventDefault();
 
   bigImg.src = link.href;
 };
