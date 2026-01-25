@@ -1,18 +1,20 @@
 'use strict';
 
-const imagesArray = document.querySelectorAll('.gallery__thumb');
-const bigImage = document.querySelector('.gallery__large-img');
+const thumbsList = document.querySelector('#thumbs');
+const bigImage = document.querySelector('#largeImg');
 
-imagesArray.forEach((image) => {
-  image.addEventListener('click', (events) => {
-    events.preventDefault();
+thumbsList.addEventListener('click', (events) => {
+  events.preventDefault();
 
-    const parentLink = image.closest('a');
+  const clickedThumb = events.target.closest('.gallery__thumb');
 
-    if (parentLink) {
-      bigImage.src = parentLink.href;
-    } else {
-      bigImage.src = image.src;
-    }
-  });
+  if (!clickedThumb) {
+    return;
+  }
+
+  const link = clickedThumb.closest('a');
+
+  if (link) {
+    bigImage.src = link.href;
+  }
 });
