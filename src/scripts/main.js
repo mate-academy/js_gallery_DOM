@@ -8,13 +8,9 @@ thumbs.onclick = function (action) {
 
   const link = action.target.closest('a');
 
-  if (!link) {
+  if (!link || !thumbs.contains(link)) {
     return;
   }
 
-  action.preventDefault();
-
-  const newSrc = link.getAttribute('href');
-
-  largeImg.setAttribute('src', newSrc);
+  largeImg.src = link.href;
 };
