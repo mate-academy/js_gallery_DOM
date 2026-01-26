@@ -3,14 +3,18 @@
 const thumbs = document.querySelector('#thumbs');
 const largeImg = document.querySelector('#largeImg');
 
-thumbs.addEventListener('click', (action) => {
+thumbs.onclick = function (action) {
   action.preventDefault();
 
   const link = action.target.closest('a');
 
-  if (!link || !thumbs.contains(link)) {
+  if (!link) {
     return;
   }
 
-  largeImg.src = link.href;
-});
+  action.preventDefault();
+
+  const newSrc = link.getAttribute('href');
+
+  largeImg.setAttribute('src', newSrc);
+};
