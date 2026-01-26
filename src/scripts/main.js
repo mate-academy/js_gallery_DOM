@@ -14,5 +14,5 @@ thumbs.onclick = function (action) {
 
   const newSrc = link.getAttribute('href');
 
-  largeImg.src = newSrc;
+  largeImg.setAttribute('src', newSrc);
 };
