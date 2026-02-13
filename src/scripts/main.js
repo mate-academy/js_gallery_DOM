@@ -1,14 +1,26 @@
 'use strict';
 
-const largeImg = document.getElementById("largeImg")
-const thumbs = document.getElementById("thumbs")
+'use strict';
 
-thumbs.addEventListener("click", (event) => {
-  event.preventDefault();
+const largeImg = document.getElementById('largeImg');
+const thumbs = document.getElementById('thumbs');
 
-  const link = event.target.closest("a")
-  console.log(link)
-  if (!link) return;
+if (!largeImg || !thumbs) {
+  return;
+}
+
+thumbs.addEventListener('click', (e) => {
+  if (!(e.target instanceof Element)) {
+    return;
+  }
+
+  const link = e.target.closest('a');
+  if (!link) {
+    return;
+  }
+
+  e.preventDefault();
 
   largeImg.src = link.href;
-})
+});
+
