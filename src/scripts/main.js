@@ -8,7 +8,7 @@ const galleryEvent = (e) => {
   const chosenLink = e.target.closest('a');
 
   if (!chosenLink) {
-    return
+    return;
   }
 
   e.preventDefault();
@@ -16,4 +16,4 @@ const galleryEvent = (e) => {
   largeImg.src = chosenLink.href;
 };
 
-listItems.addEventListener('click', galleryEvent);
+galleryList.addEventListener('click', galleryEvent);
