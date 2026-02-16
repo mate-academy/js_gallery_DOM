@@ -1,13 +1,17 @@
 'use strict';
 
 const mainImage = document.querySelector('.gallery__large-img');
-const gallery = document.querySelectorAll('.list-item a');
+const gallery = document.querySelector('.gallery__list');
 
 if (mainImage) {
-  gallery.forEach((link) => {
-    link.addEventListener('click', (target) => {
-      target.preventDefault();
-      mainImage.src = target.currentTarget.href;
-    });
+  gallery.addEventListener('click', (e) => {
+    const anchor = e.target.closest('a');
+
+    if (!anchor) {
+      return anchor;
+    }
+
+    e.preventDefault();
+    mainImage.src = anchor.href;
   });
 }
