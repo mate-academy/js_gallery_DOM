@@ -3,12 +3,16 @@
 const smallImages = document.querySelectorAll('.gallery__thumb');
 const largeImage = document.querySelector('#largeImg');
 
-smallImages.forEach((image) => {
-  image.addEventListener('click', (change) => {
-    change.preventDefault();
+smallImages.addEventListener('click', (event1) => {
+  event1.preventDefault();
 
-    const parentLink = image.parentElement;
+  let target = event1.target;
 
-    largeImage.src = parentLink.href;
-  });
+  if (target.tagName === 'IMG') {
+    target = target.parentElement;
+  }
+
+  if (target.tagName === 'A') {
+    largeImage.src = target.href;
+  }
 });
