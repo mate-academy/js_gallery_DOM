@@ -13,6 +13,8 @@ ul.addEventListener('click', (e) => {
   }
 
   const a = listItem.querySelector('a');
+  const image = listItem.querySelector('img');
 
+  image.alt = a.title;
   mainImage.src = a.href;
 });
