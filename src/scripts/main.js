@@ -8,7 +8,7 @@ imgs.addEventListener('click', (ev) => {
 
   const img = ev.target.closest('.list-item');
 
-  if (!img) {
+  if (!img || !img.querySelector('a')) {
     return;
   }
 
