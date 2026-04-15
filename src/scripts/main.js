@@ -1,6 +1,6 @@
 'use strict';
 
-const galleryImg = document.querySelector('.gallery__img');
+const galleryImg = document.querySelector('.gallery__large-img');
 const galleryList = document.querySelector('.gallery__list');
 
 if (galleryImg && galleryList) {
@@ -12,7 +12,7 @@ if (galleryImg && galleryList) {
     }
     e.preventDefault();
 
-    const href = link.getAttribute('href');
+    const href = link.href;
 
     galleryImg.setAttribute('src', href);
   });
