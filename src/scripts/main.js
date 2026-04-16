@@ -12,7 +12,7 @@ if (galleryImg && galleryList) {
     }
     e.preventDefault();
 
-    const href = link.href;
+    const href = link.getAttribute('href');
 
     galleryImg.setAttribute('src', href);
   });
