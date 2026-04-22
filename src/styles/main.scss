@@ -1,7 +1,7 @@
 body {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   min-height: 100vh;
 }
 
@@ -17,8 +17,8 @@ li {
     width: 450px;
   }
   &__list {
-    display: flex;
     margin-top: 0;
+    display: flex;
     padding-left: 0;
   }
   &__img {
