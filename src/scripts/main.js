@@ -2,6 +2,10 @@ document.addEventListener('DOMContentLoaded', function () {
   const gallery = document.querySelector('.gallery');
   const largeImg = document.querySelector('#largeImg');
 
+  if (!gallery || !largeImg) {
+    return; // or handle the missing elements gracefully
+  }
+
   // eslint-disable-next-line no-shadow
   gallery.addEventListener('click', function (event) {
     if (event.target.tagName === 'IMG') {
