@@ -1,17 +1,21 @@
-const gallery = document.querySelector('.gallery');
-const largeImg = document.querySelector('#largeImg');
+document.addEventListener('DOMContentLoaded', function () {
+  const gallery = document.querySelector('.gallery');
+  const largeImg = document.querySelector('#largeImg');
 
-// eslint-disable-next-line no-shadow
-gallery.addEventListener('click', function (event) {
-  if (event.target.tagName === 'img') {
-    const targetSrc = event.target.src;
+  // eslint-disable-next-line no-shadow
+  gallery.addEventListener('click', function (event) {
+    if (event.target.tagName === 'IMG') {
+      const targetSrc = event.target.src;
 
-    largeImg.src = targetSrc;
-  }
+      largeImg.src = targetSrc;
+    }
 
-  if (event.target.tagName === 'a') {
-    const imgInsideA = event.target.querySelector('img');
+    if (event.target.tagName === 'A') {
+      const imgInsideA = event.target.querySelector('img');
 
-    largeImg.src = imgInsideA.src;
-  }
+      if (imgInsideA) {
+        largeImg.src = imgInsideA.src;
+      }
+    }
+  });
 });
