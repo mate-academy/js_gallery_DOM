@@ -1,10 +1,10 @@
 const thumbs = document.querySelector('#thumbs');
 const largeImg = document.querySelector('#largeImg');
 
-thumbs.addEventListener('click', (event) => {
-  event.preventDefault();
+thumbs.addEventListener('click', (e) => {
+  e.preventDefault();
 
-  const target = event.target;
+  const target = e.target;
 
   let link;
 
