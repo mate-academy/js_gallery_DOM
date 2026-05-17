@@ -3,10 +3,14 @@
 const gallery = document.querySelector('.gallery');
 const mainImage = document.querySelector('.gallery__img');
 
-gallery.addEventListener('click', function (eve) {
-  if (eve.target.tagName === 'IMG') {
-    mainImage.src = eve.target.src;
-  } else {
-    mainImage.src = eve.target.href;
-  }
-});
+if (gallery && mainImage) {
+  gallery.addEventListener('click', function (eve) {
+    const link = eve.target.closest('a');
+
+    if (link && eve.target !== mainImage) {
+      eve.preventDefault();
+
+      mainImage.src = link.href;
+    }
+  });
+}
