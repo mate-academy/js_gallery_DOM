@@ -8,7 +8,7 @@ thumbs.addEventListener('click', (newevent) => {
 
   // Знаходимо найближчий елемент <a> від того, на що клікнули
   // .closest() шукає вгору по DOM — працює і якщо клікнули на <img>, і на <a>
-  const link = event.target.closest('a');
+  const link = newevent.target.closest('a');
 
   // Якщо клік був поза посиланням — ігноруємо
   if (!link) {
