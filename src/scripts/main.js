@@ -6,11 +6,11 @@ const gallery = document.querySelector('#thumbs');
 gallery.addEventListener('click', changeImg);
 
 function changeImg(ev) {
-  const link = event.target.closest('a');
+  const link = ev.target.closest('a');
 
   if (!link) {
     return;
   }
-  event.preventDefault();
+  ev.preventDefault();
   largeImg.src = link.href;
 }
