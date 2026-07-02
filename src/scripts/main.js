@@ -13,5 +13,5 @@ links.addEventListener('click', (e) => {
     return;
   }
 
-  mainImg.src = link.getAttribute('href');
+  mainImg.src = link.href;
 });
