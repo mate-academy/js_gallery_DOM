@@ -6,6 +6,10 @@ const gallery = document.querySelector('.gallery');
 gallery.addEventListener('click', (newEvent) => {
   const clickedLink = newEvent.target.closest('.list-item__link');
 
+  if (!clickedLink) {
+    return;
+  }
+
   newEvent.preventDefault();
 
   const hrefValue = clickedLink.href;
