@@ -8,7 +8,7 @@ item.addEventListener('click', (eventObj) => {
 
   if (eventObj.target.alt === 'thumb') {
     mainImg.setAttribute('src', eventObj.target.parentElement.href);
-  } else {
+  } else if (eventObj.target.class === 'list-item__link') {
     mainImg.setAttribute('src', eventObj.target.href);
   }
 });
