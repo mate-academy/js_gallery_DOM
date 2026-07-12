@@ -3,9 +3,9 @@
 const gallery = document.querySelector('.gallery');
 const mainImage = document.querySelector('.gallery__large-img');
 
-gallery.addEventListener('click', () => {
-  const image = event.target.closest('img');
-  const link = event.target.closest('a');
+gallery.addEventListener('click', (e) => {
+  const image = e.target.closest('img');
+  const link = e.target.closest('a');
 
   if (!image && !link) {
     return;
@@ -16,7 +16,7 @@ gallery.addEventListener('click', () => {
   }
 
   if (link) {
-    event.preventDefault();
+    e.preventDefault();
     mainImage.src = link.href;
   }
 });
