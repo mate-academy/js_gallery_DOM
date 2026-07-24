@@ -14,5 +14,5 @@ thumbs.addEventListener('click', (e) => {
 
   const imgLink = newImg.getAttribute('href');
 
-  largeImg.src = imgLink;
+  largeImg.setAttribute('src', imgLink);
 });
