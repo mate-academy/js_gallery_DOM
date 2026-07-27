@@ -3,7 +3,7 @@
 const thumbs = document.querySelector('#thumbs');
 const largeImg = document.querySelector('#largeImg');
 
-thumbs.addEventListener('click', (clickEvent) => {
+thumbs.addEventListener('click', function (clickEvent) {
   const target = clickEvent.target;
 
   const link = target.closest('.list-item__link');
@@ -13,6 +13,12 @@ thumbs.addEventListener('click', (clickEvent) => {
   }
 
   clickEvent.preventDefault();
-  largeImg.src = link.getAttribute('href');
-  largeImg.alt = link.getAttribute('title');
+
+  const newSrc =
+    window.location.protocol +
+    '//' +
+    window.location.host +
+    link.getAttribute('href');
+
+  largeImg.src = newSrc;
 });
