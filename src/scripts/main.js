@@ -11,5 +11,5 @@ list.addEventListener('click', (e) => {
   }
 
   e.preventDefault();
-  largeImage.src = link.getAttribute('src');
+  largeImage.src = link.href;
 });
