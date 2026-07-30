@@ -8,9 +8,6 @@ gallery.addEventListener('click', (e) => {
 
   if (thumbnail) {
     e.preventDefault();
-
-    const src = thumbnail.getAttribute('href');
-
-    largeImage.src = src;
+    largeImage.src = thumbnail.href;
   }
 });
