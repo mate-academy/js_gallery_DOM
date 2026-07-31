@@ -1,33 +1,28 @@
 'use strict';
 
-document.addEventListener('DOMContentLoaded', () => {
-  function handleClickGallery(selector, preview, list, target) {
-    const gallery = document.querySelector(selector);
-    const galleryPreview = gallery?.querySelector(preview);
-    const galleryList = gallery?.querySelector(list);
+function initGallery() {
+  const preview = document.querySelector('#largeImg');
+  const list = document.querySelector('#thumbs');
 
-    if (!gallery || !galleryPreview || !galleryList) {
-      return;
-    }
-
-    galleryList.addEventListener('click', (evt) => {
-      evt.preventDefault();
-
-      const element = evt.target.closest(target);
-
-      if (!element) {
-        return;
-      }
-
-      const link = element.closest('a');
-
-      if (link) {
-        const fullImageUrl = link.href;
-
-        galleryPreview.src = fullImageUrl;
-      }
-    });
+  if (!preview || !list) {
+    return;
   }
 
-  handleClickGallery('.gallery', '#largeImg', '#thumbs', '.gallery__img');
-});
+  list.addEventListener('click', (evt) => {
+    evt.preventDefault();
+
+    let link;
+
+    if (evt.target.tagName === 'A') {
+      link = evt.target;
+    } else if (evt.target.classList.contains('gallery__img')) {
+      link = evt.target.closest('a');
+    }
+
+    if (link) {
+      preview.src = link.href;
+    }
+  });
+}
+
+initGallery();
