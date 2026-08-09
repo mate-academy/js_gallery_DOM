@@ -3,13 +3,13 @@
 const images = document.querySelector('.gallery ul');
 
 images.addEventListener('click', (e) => {
-  const link = e.target.closest('.list-item__link');
+  const link = e.target.closest('a');
 
   if (link) {
     e.preventDefault();
 
-    const img = e.target.closest('a');
+    const element = 'http://localhost:3001' + link.getAttribute('href');
 
-    document.getElementById('largeImg').setAttribute('src', `${img}`);
+    document.getElementById('largeImg').setAttribute('src', `${element}`);
   }
 });
