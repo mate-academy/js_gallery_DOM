@@ -4,13 +4,13 @@ const galleryList = document.querySelector('.gallery__list');
 const bigImage = document.querySelector('.gallery__large-img');
 
 galleryList.addEventListener('click', (e) => {
-  const clickedItem = e.target.closest('.gallery__img');
+  const clickedLink = e.target.closest('a');
 
-  if (!clickedItem) {
+  if (!clickedLink) {
     return;
   }
 
   e.preventDefault();
 
-  bigImage.src = clickedItem.parentElement.href;
+  bigImage.src = clickedLink.href;
 });
