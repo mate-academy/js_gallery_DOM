@@ -3,15 +3,15 @@
 const galleryList = document.querySelector('.gallery ul');
 const main = document.querySelector('img#largeImg');
 
-galleryList.addEventListener('click', () => {
-  event.preventDefault();
+galleryList.addEventListener('click', (e) => {
+  e.preventDefault();
 
-  if (event.target.tagName === 'IMG') {
-    const value = event.target.parentElement.href;
+  if (e.target.tagName === 'IMG') {
+    const value = e.target.parentElement.href;
 
     main.src = value;
-  } else if (event.target.tagName === 'A') {
-    const value = event.target.href;
+  } else if (e.target.tagName === 'A') {
+    const value = e.target.href;
 
     main.src = value;
   }
