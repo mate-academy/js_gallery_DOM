@@ -4,13 +4,13 @@ const thumbs = document.querySelector('#thumbs');
 
 const oldImg = document.querySelector('.gallery__large-img');
 
-thumbs.addEventListener('click', () => {
-  event.preventDefault();
+thumbs.addEventListener('click', (clickEvent) => {
+  clickEvent.preventDefault();
 
-  if (event.target.tagName === 'A') {
-    oldImg.setAttribute('src', event.target.getAttribute('href'));
+  if (clickEvent.target.tagName === 'A') {
+    oldImg.setAttribute('src', clickEvent.target.getAttribute('href'));
   } else {
-    const closest = event.target.closest('.list-item__link');
+    const closest = clickEvent.target.closest('.list-item__link');
 
     oldImg.setAttribute('src', closest.getAttribute('href'));
   }
