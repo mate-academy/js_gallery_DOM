@@ -4,13 +4,13 @@ const big = document.querySelector('#largeImg');
 const list = document.querySelector('#thumbs');
 
 list.addEventListener('click', (e) => {
-  const link = e.target.closest('a');
+  const referens = e.target.closest('a');
 
-  if (link) {
+  if (referens) {
     e.preventDefault();
 
-    const src = link.getAttribute('href');
+    const absoluteUrl = referens.href;
 
-    big.src = src;
+    big.setAttribute('src', absoluteUrl);
   }
 });
