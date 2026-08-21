@@ -14,4 +14,3 @@ gallery.addEventListener('click', (clickEvent) => {
     largeImage.src = clickEvent.target.href;
   }
 });
-пшg
