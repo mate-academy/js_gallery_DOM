@@ -1,16 +1,21 @@
 'use strict';
 
-const big = document.querySelector('#largeImg');
-const list = document.querySelector('#thumbs');
+const thumbsList = document.querySelector('#thumbs');
+const largeImg = document.querySelector('#largeImg');
 
-list.addEventListener('click', (e) => {
-  const referens = e.target.closest('a');
+thumbsList.addEventListener('click', (e) => {
+  const link = e.target.closest('a');
 
-  if (referens) {
-    e.preventDefault();
-
-    const absoluteUrl = referens.href;
-
-    big.setAttribute('src', absoluteUrl);
+  if (!link) {
+    return;
   }
+
+  if (!thumbsList.contains(link)) {
+    return;
+  }
+
+  e.preventDefault();
+
+  largeImg.src = link.href;
+  largeImg.alt = link.title;
 });
