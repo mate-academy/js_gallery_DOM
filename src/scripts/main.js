@@ -15,5 +15,5 @@ thumbs.addEventListener('click', (e) => {
     return;
   }
 
-  mainImage.src = e.target.parentNode.href;
+  mainImage.src = image.querySelector('.list-item__link').href;
 });
