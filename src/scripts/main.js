@@ -6,13 +6,11 @@ const largeImg = document.getElementById('largeImg');
 thumbsList.addEventListener('click', (clickEvent) => {
   clickEvent.preventDefault();
 
-  const target = clickEvent.target;
+  const link = clickEvent.target.closest('a');
 
-  const img = target.tagName === 'IMG' ? target : target.querySelector('img');
-
-  if (!img) {
+  if (!link) {
     return;
   }
 
-  largeImg.src = img.src;
+  largeImg.src = link.href;
 });
