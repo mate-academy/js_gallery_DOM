@@ -11,8 +11,8 @@ thumbs.addEventListener('click', (e) => {
   }
 
   if (e.target.classList.contains('gallery__img')) {
-    const src = e.target.src.split('8080')[1].split('-thumb')[0];
+    const src = e.target.src.split('/landscape')[1].split('-thumb')[0];
 
-    largeImg.src = '/images' + src + '.png';
+    largeImg.src = '/images/landscape' + src + '.png';
   }
 });
