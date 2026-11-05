@@ -9,7 +9,7 @@ thumbs.addEventListener('click', (e) => {
   const url = window.location.origin;
 
   if (e.target.classList.contains('list-item__link')) {
-    largeImg.src = url + e.target.href;
+    largeImg.src = url + e.target.pathname;
   }
 
   if (e.target.classList.contains('gallery__img')) {
