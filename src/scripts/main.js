@@ -4,10 +4,10 @@
 const thumbs = document.querySelector('#thumbs');
 const largeImg = document.querySelector('#largeImg');
 
-thumbs.addEventListener('click', (event) => {
-  event.preventDefault();
+thumbs.addEventListener('click', (e) => {
+  e.preventDefault();
 
-  const link = event.target.closest('a');
+  const link = e.target.closest('a');
 
   if (!link || !thumbs.contains(link)) {
     return;
